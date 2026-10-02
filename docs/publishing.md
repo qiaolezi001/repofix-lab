@@ -1,6 +1,6 @@
 # Publishing on GitHub
 
-The local repository is prepared for review. No GitHub account, remote repository or public push is implied by local generation. Publish only after the maintainer has reviewed the source, artifacts and license and explicitly authorized the release.
+The maintainer reviewed and authorized the initial publication at [qiaolezi001/repofix-lab](https://github.com/qiaolezi001/repofix-lab); the first remote CI passed. The instructions below remain a guide for future releases and forks. Publish after reviewing source, artifacts and license and obtaining the relevant maintainer's authorization.
 
 ## Suggested repository metadata
 

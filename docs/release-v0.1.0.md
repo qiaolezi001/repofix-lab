@@ -15,7 +15,9 @@ This first release includes:
 
 Local validation on Windows with Python 3.11.9 and uv 0.12.13: **119 tests passed, 1 skipped**. Ruff lint/format and mypy passed. The skipped test requires Windows symlink-creation privileges; junction handling was tested separately. Actual Mock browser flows and a clean wheel installation were exercised. See [STATUS.md](../STATUS.md) for evidence and the scope of each check.
 
-**Measurement limits:** Mock demonstrates engineering flow only. Real-model repair accuracy, online provider compatibility and API cost have not been measured. The local Docker engine was unreachable, so no sandbox image/container execution was verified; container command/cleanup and trusted runner behavior were tested offline. GitHub Actions were configured, but remote CI had not run when these release notes were prepared.
+The first [GitHub Actions run](https://github.com/qiaolezi001/repofix-lab/actions/runs/37058013447) also passed on Ubuntu with Python 3.12: **120 passed**, including the symlink case unavailable on the Windows host. Remote Ruff lint/format and mypy checks passed.
+
+**Measurement limits:** Mock demonstrates engineering flow only. Real-model repair accuracy, online provider compatibility and API cost have not been measured. The local Docker engine was unreachable, so no sandbox image/container execution was verified; container command/cleanup and trusted runner behavior were tested offline. Remote CI validates offline engineering behavior, not model quality or container execution.
 
 The prototype supports small, dependency-free Python snapshots and defaults to localhost. It is not a production service or a security guarantee against hostile Python. Candidate generation, complete public-test verification and independent acceptance are separate outcomes. Reference-fixture validation is dataset authoring evidence, not a model score.
 

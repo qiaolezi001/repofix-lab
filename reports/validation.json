@@ -64,9 +64,23 @@
   "real_provider_validation": "not_run",
   "real_model_metrics": null,
   "docker_execution": "unavailable",
-  "remote_ci": "not_run",
-  "github_publication": "repository_created_push_pending",
+  "remote_ci": "passed",
+  "github_publication": "published_public",
   "review_regressions": 15,
   "publication_confirmation": "authorized_by_user",
-  "repository_url": "https://github.com/qiaolezi001/repofix-lab"
+  "repository_url": "https://github.com/qiaolezi001/repofix-lab",
+  "remote_ci_evidence": {
+    "url": "https://github.com/qiaolezi001/repofix-lab/actions/runs/37058013447",
+    "head_sha": "f61b5e5b8fce5eabfb1ddddf9ee4fccb4b36c809",
+    "platform": "Ubuntu",
+    "python": "3.12",
+    "pytest_passed": 120,
+    "pytest_skipped": 0,
+    "pytest_failed": 0,
+    "ruff": "passed",
+    "format": "passed",
+    "mypy": "passed",
+    "model_credentials_required": false,
+    "docker_execution_measured": false
+  }
 }

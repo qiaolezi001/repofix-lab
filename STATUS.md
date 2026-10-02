@@ -20,6 +20,7 @@ Validated on 2026-10-03 (Asia/Shanghai), Windows, Python 3.11.9, uv 0.12.13. Imp
 | Clean installation | Built sdist/wheel, installed wheel in a separate environment outside checkout; packaged demo and 15 benchmark tasks present; demo produces real evidence/patch |
 | Final API/documentation correction | OpenAPI schema served locally; CDN Swagger/Redoc pages disabled to retain offline CSP. All 4 API tests rerun and passed; running service UI and schema returned HTTP 200 |
 | Source release archive | 257 tracked files including review checklist and release notes; all 15 frozen fixture snapshots retain exact hashes after extraction; local runtime/cache/secret files excluded |
+| Actual GitHub Actions | [First successful remote run](https://github.com/qiaolezi001/repofix-lab/actions/runs/37058013447), commit `f61b5e5b8fce5eabfb1ddddf9ee4fccb4b36c809`; Ubuntu/Python 3.12, **120 passed**, Ruff/format/mypy passed |
 
 One dependency deprecation warning in Starlette's HTTPX-based test client remains; tests pass. This is not an application runtime failure.
 
@@ -35,7 +36,10 @@ One dependency deprecation warning in Starlette's HTTPX-based test client remain
 
 1. **Docker execution:** CLI is installed, but the Linux engine is unreachable. Desktop startup was attempted; no sandbox image/container run succeeded. Docker command construction/cleanup and trusted runner guards are unit tested, not container verified. Start a working Linux Docker engine, build `Dockerfile.sandbox`, then rerun the demo and inspect a nonempty complete public suite.
 2. **Real provider:** no model API key/model is configured. Protocol contract tests pass offline; no online compatibility probe, real repair task or paid batch benchmark has run. Configure environment variables locally, review provider pricing, run the explicitly authorized two-call probe and one development task before deciding on a batch budget.
-3. **GitHub:** the authorized public repository has been created at <https://github.com/qiaolezi001/repofix-lab>. The initial push and remote CI are in progress; no remote test result is claimed yet.
+
+## GitHub publication
+
+Published with the maintainer's authorization at <https://github.com/qiaolezi001/repofix-lab>, public visibility, default branch `main`. The initial push and first remote CI completed successfully on 2026-10-03 (Asia/Shanghai). The Windows symlink test that was skipped locally executes on the Linux runner, so the remote run reports 120 passed. The remote workflow uses no paid model credentials and does not verify Docker execution or real-model accuracy.
 
 ## Product boundaries
 
@@ -49,7 +53,7 @@ Read `docs/guide.zh-CN.md`, then the source route and three exercises in `docs/l
 
 ## Publication gate
 
-The maintainer reviewed the candidate and explicitly authorized public GitHub publication on 2026-10-03. The reviewed scope is in `RELEASE_REVIEW.zh-CN.md`. GitHub authentication succeeded as `qiaolezi001`, and the public repository was created. Publication authorization does not include paid model evaluation.
+The maintainer reviewed the candidate and explicitly authorized public GitHub publication on 2026-10-03. The reviewed scope is in `RELEASE_REVIEW.zh-CN.md`. GitHub authentication succeeded as `qiaolezi001`, and the public repository was created and pushed. Publication authorization does not include paid model evaluation.
 
 ## Additional review completed
 

@@ -1,5 +1,7 @@
 # RepoFix-Lab
 
+[![checks](https://github.com/qiaolezi001/repofix-lab/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/qiaolezi001/repofix-lab/actions/workflows/ci.yml)
+
 **Turn a Python issue into an evidence-backed candidate patch, then verify it in an offline Docker container.**
 
 RepoFix-Lab is a small, inspectable agent engineering project: AST-based code retrieval, model-selected tools, test-feedback iteration, SQLite checkpoints, and reproducible evaluation. It targets small, dependency-free Python repositories and runs as a single-user local application.
@@ -87,7 +89,7 @@ uv run pytest
 
 Evaluation compares one-shot source-context patch generation against an iterative retrieval/tool strategy. Both use the same model, tasks and declared per-call output cap; call budgets differ and are recorded. Tokens, time and API cost are reported only when available. Reference solutions and hidden tests remain outside task inputs. See [evaluation methodology](docs/evaluation.md) for exact semantics and limitations.
 
-Local checks and artifacts are listed in [STATUS.md](STATUS.md). GitHub Actions are configured but their remote status is unknown until the repository is published and CI runs. Sandbox command construction can be tested offline; only an actual Docker run demonstrates container execution.
+Local checks and artifacts are listed in [STATUS.md](STATUS.md). The first [GitHub Actions run](https://github.com/qiaolezi001/repofix-lab/actions/runs/37058013447) passed on Ubuntu/Python 3.12 with 120 tests; the badge links to current branch checks. Sandbox command construction can be tested offline; only an actual Docker run demonstrates container execution.
 
 ## Architecture
 
