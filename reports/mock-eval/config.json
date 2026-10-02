@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-10-02T18:46:47.383299+00:00",
+  "benchmark": "synthetic-v0.1",
+  "provenance": "self-authored artificial bugs; MIT",
+  "mode": "mock",
+  "split": "eval",
+  "task_ids": [
+    "numeric-03",
+    "numeric-04",
+    "numeric-05",
+    "text-03",
+    "text-04",
+    "text-05",
+    "catalog-03",
+    "catalog-04",
+    "catalog-05"
+  ],
+  "model": "scripted-demo-mock",
+  "sandbox_image": "repofix-sandbox:0.1",
+  "cost_usd": null,
+  "budgets": {
+    "baseline": {
+      "max_model_calls": 1,
+      "max_repairs": 1
+    },
+    "agent": {
+      "max_model_calls": 12,
+      "max_repairs": 3
+    },
+    "context_chars": 32000,
+    "max_output_tokens": 1800,
+    "timeout_seconds": 180,
+    "maximum_total_model_calls": 0
+  },
+  "comparison_note": "Same model and tasks; baseline has one response, Agent has a larger explicit budget. This is an architecture comparison, not equal compute.",
+  "context_policy": {
+    "baseline": "Issue and bounded source Python context; one patch response; no test feedback",
+    "agent": "Issue and tool-selected context; public tests readable; test-feedback iterations allowed"
+  },
+  "disclaimer": "ENGINEERING ONLY: mock uses a hand-scripted fixture pattern, not model predictions; even a matching edit is excluded from real-model scores. All real-model repair metrics are null."
+}

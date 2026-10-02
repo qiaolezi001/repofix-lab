@@ -1,0 +1,20 @@
+{
+  "id": "text-04",
+  "project": "text",
+  "split": "eval",
+  "category": "cross_file",
+  "provenance": "self-authored; one artificially injected bug; MIT",
+  "initial_version": "624fc16b181193b8ede48fd93144e8b8a3d72071d9a20750a79fe5ceb5bd90d8",
+  "source_sha256": {
+    "textkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "textkit/core.py": "9278d2cf10104bb0c4e263fcfb5ac19b26d9a8c439fe7e0825d27d5ecda8679e",
+    "textkit/tokens.py": "4a60b6ede0b8fde7acdfe671d390399bc009e21f915f13e182efce236b63e86a",
+    "textkit/matching.py": "2c61a21d74a21dc312775583fa6d2e14ac281c519988f4611d7a6225cec51260",
+    "tests/test_public.py": "47acd377e2fecfcf254a51329ea27c7fa707f15b2abacb1d094712894cc4c4c5",
+    "README.md": "eed47f590c4dc84029c5fdc1f78242e01e790b8c4eb872b2592c69a086b6d252"
+  },
+  "public_tests": "tests",
+  "hidden_tests": "hidden/test_acceptance.py",
+  "issue_sha256": "1d38c57d726b7474d8d6051e07556548b64de26c84bf733fb68a7564f7bb5a2b",
+  "acceptance_sha256": "c25a47ae1f3b04ac3f2144bbbc3218bea648702533baa6a21ed62a2b86fc771b"
+}

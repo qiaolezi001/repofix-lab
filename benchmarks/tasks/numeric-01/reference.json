@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "numberkit/bounds.py",
+      "old": "return max(high, max(low, value))",
+      "new": "return min(high, max(low, value))"
+    }
+  ]
+}

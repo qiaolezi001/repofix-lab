@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "shopkit/money.py",
+      "old": "return price * (1 - percent / 10)",
+      "new": "return price * (1 - percent / 100)"
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "created_at": "2026-10-02T18:27:34.911003+00:00",
+  "kind": "AUTHORING_VALIDATION_ONLY",
+  "disclaimer": "Trusted self-authored fixture validation on host. Reference patches are author answers. This is NOT an Agent repair benchmark or model accuracy result.",
+  "benchmark": "synthetic-v0.1",
+  "manifest_sha256": "60a92e3a75d3dc9e393db6764d9ea286656fbfaccfb6c8b5a1aafab82750af45",
+  "command": "PYTHONPATH=src python -m pytest tests/test_benchmarks.py -q",
+  "python": "3.11.9",
+  "pytest": "9.1.1",
+  "pytest_result": {
+    "passed": 21,
+    "failed": 0,
+    "duration_seconds": 73.88
+  },
+  "original_bugs_reproduced": 15,
+  "author_reference_patches_passing_public_and_acceptance": 15,
+  "host_execution_scope": "Only immutable self-authored fixtures and their author reference edits. Never user-submitted repositories or model-generated patches.",
+  "real_model_performance": {
+    "status": "not_measured",
+    "accuracy": null,
+    "cost_usd": null
+  },
+  "tasks": [
+    {
+      "id": "numeric-01",
+      "split": "dev",
+      "initial_version": "a0671ccbbaf79ef73a9c53ee03a72a480004f91a0170c0010deb87d5a35e4593",
+      "source_sha256": {
+        "numberkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "numberkit/bounds.py": "db3502eff31e013b88e21c6fccff8cbbfece408a122323ea9b787549b0bed5d5",
+        "numberkit/stats.py": "c049137e6c548b248d5698a72f16c900c4056d2eac813e3e862d3e6f0beecadc",
+        "numberkit/weights.py": "327f894e9392bba3b7728fcaef48984e6c81ce4e133fa3fe6bc63648e602f95a",
+        "tests/test_public.py": "ff4fa71095c68f41a24a111ff7935daea0d7dfe2803242307d6a079f639cdaa2",
+        "README.md": "9ba0d5d5dab062ac0aa1a3ee2e72550db6049ea5de928a7e0cfdcbd5444741b4"
+      },
+      "issue_sha256": "fef747f59039f080da8afdb2c0f77b76dd7c90c982abc336d49e98fc7c7df888",
+      "acceptance_sha256": "1dcac93762f4e5cc75b75aaa87f8e3e8081d8bbc86f43b79be645a01f68af3b4",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "numeric-02",
+      "split": "dev",
+      "initial_version": "9ce84b0d88aa0d4d23193f67199b88961b907c77cf157ef08531e307478e0645",
+      "source_sha256": {
+        "numberkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "numberkit/bounds.py": "aa6277b94520c983219d69247722d94a14a777ba4cac422bc106315685018da6",
+        "numberkit/stats.py": "d1d14bb10366f1c8f91e93f57178bff9f415c450954b523a6ecd3a525469d3cd",
+        "numberkit/weights.py": "327f894e9392bba3b7728fcaef48984e6c81ce4e133fa3fe6bc63648e602f95a",
+        "tests/test_public.py": "507cc594d1998d12b39c86e756f4b305b6e137f5661a6d187fcff0dbc5008f95",
+        "README.md": "9ba0d5d5dab062ac0aa1a3ee2e72550db6049ea5de928a7e0cfdcbd5444741b4"
+      },
+      "issue_sha256": "2b8a85d2db8fb558b562eb7d95e7c8193aa24df7f5741c7438cb58e0c6324bc3",
+      "acceptance_sha256": "62d37dce70ac5a24133839e3e3870c10ab87978f6a4b16c94843533a08c8e902",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "numeric-03",
+      "split": "eval",
+      "initial_version": "3fc3e64c6457e962e5ddead205cc4bdfb917121dd7661a3c8a02e930baeb6622",
+      "source_sha256": {
+        "numberkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "numberkit/bounds.py": "aa6277b94520c983219d69247722d94a14a777ba4cac422bc106315685018da6",
+        "numberkit/stats.py": "2deda60881f24e58fdeeeb2d6d34fc32970b2b3a491dee98a8b2cc4c8eb05ab2",
+        "numberkit/weights.py": "327f894e9392bba3b7728fcaef48984e6c81ce4e133fa3fe6bc63648e602f95a",
+        "tests/test_public.py": "20e63ab2c57f7a678edf92388ccfc36d58804092ff9719db0f9ea356c5963e56",
+        "README.md": "9ba0d5d5dab062ac0aa1a3ee2e72550db6049ea5de928a7e0cfdcbd5444741b4"
+      },
+      "issue_sha256": "9fe622ebe28ec043a461fc371402007672e8420441150c0886e5f9c3e09af401",
+      "acceptance_sha256": "095ad63110eaa16cf86f7cb811dcff7b8f261b3e1870a52d00353ac7080f2f5a",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "numeric-04",
+      "split": "eval",
+      "initial_version": "85baca46bc572c23baefa2f6911b13b15cf87858e4a5abbf71f2e096887268fd",
+      "source_sha256": {
+        "numberkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "numberkit/bounds.py": "aa6277b94520c983219d69247722d94a14a777ba4cac422bc106315685018da6",
+        "numberkit/stats.py": "c049137e6c548b248d5698a72f16c900c4056d2eac813e3e862d3e6f0beecadc",
+        "numberkit/weights.py": "380d389856eef3c01f31a880297d1e9bcb31d8e2e7459567010f963385acf7a6",
+        "tests/test_public.py": "9d0a72963447e3122f10edd44bf569d39e5412d0457972435b7c9dc175804d2b",
+        "README.md": "9ba0d5d5dab062ac0aa1a3ee2e72550db6049ea5de928a7e0cfdcbd5444741b4"
+      },
+      "issue_sha256": "04f66d4ca73c56bb5990ac5cb200f0ecf818ad53ff029c299358637b27c7ca07",
+      "acceptance_sha256": "af04d752d66b4e6790d65bdbea4855c2a7857562ec847a697a89ceb21c8c2db3",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "numeric-05",
+      "split": "eval",
+      "initial_version": "1cd6d1c4d6e395c5b5d903cf9783ef96e33183c86820b9b523349e53933fa1c0",
+      "source_sha256": {
+        "numberkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "numberkit/bounds.py": "be7c5dd8403bf19fd4055d2ddd43ed2cf370303947293199e2f3a748e2519d4f",
+        "numberkit/stats.py": "c049137e6c548b248d5698a72f16c900c4056d2eac813e3e862d3e6f0beecadc",
+        "numberkit/weights.py": "327f894e9392bba3b7728fcaef48984e6c81ce4e133fa3fe6bc63648e602f95a",
+        "tests/test_public.py": "7f038fa77b252b01cce38fb599c84ec0ed80faea19470e24bce5a4750e7bd654",
+        "README.md": "9ba0d5d5dab062ac0aa1a3ee2e72550db6049ea5de928a7e0cfdcbd5444741b4"
+      },
+      "issue_sha256": "ddf160f306bb643be1e21b165bdb39d94c16c24e40696d4e9497f3269f9d678b",
+      "acceptance_sha256": "c6e5b0189b310e494a8df7560c38acebfa3f471ca21efe0cc8e9a5ed3ed52c08",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "text-01",
+      "split": "dev",
+      "initial_version": "e91b93908ad0c0b4916357c3be8e0a6ce88d8f06ef1256b88780d660c67d3fe8",
+      "source_sha256": {
+        "textkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "textkit/core.py": "ea808880d47b952c736096cc6213e3ce3fc8c6cdbb81aef5e730ca2142e5b987",
+        "textkit/tokens.py": "f8cb903450c2a958d83c4e6cd148c3aeba916f580dfb5f7aea376ff82e9ae80e",
+        "textkit/matching.py": "2c61a21d74a21dc312775583fa6d2e14ac281c519988f4611d7a6225cec51260",
+        "tests/test_public.py": "fd0e938cdc8970a43155e0bfe84f5ce41ca9cc2fcc8d018ea6fbe871ea5ff6f7",
+        "README.md": "eed47f590c4dc84029c5fdc1f78242e01e790b8c4eb872b2592c69a086b6d252"
+      },
+      "issue_sha256": "4c8ae9f64c06c6018d5ffcab5270849b607e29eb32814151eda1020f151c5cd7",
+      "acceptance_sha256": "d30c4feb1d8909780636d41a12f6383aed81630633e6eeb612908272ab098178",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "text-02",
+      "split": "dev",
+      "initial_version": "ac9f9659e897107897a1a691c85996bc46271d4817f8d0cf16fca4b79beb082c",
+      "source_sha256": {
+        "textkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "textkit/core.py": "18070dc4095b327c3a845453293e51f15c8c80363bde8150a08ca5dc97ee1695",
+        "textkit/tokens.py": "f8cb903450c2a958d83c4e6cd148c3aeba916f580dfb5f7aea376ff82e9ae80e",
+        "textkit/matching.py": "2c61a21d74a21dc312775583fa6d2e14ac281c519988f4611d7a6225cec51260",
+        "tests/test_public.py": "305d5af3b16b4add7d49f55a43209749d9c5af2473487445ac9e0e8b0540dd2d",
+        "README.md": "eed47f590c4dc84029c5fdc1f78242e01e790b8c4eb872b2592c69a086b6d252"
+      },
+      "issue_sha256": "b02a5920839b1b8a07ef531fe575e56027f5eb7a611f954387fd0c676f12b903",
+      "acceptance_sha256": "7e3f4e85d9b427d5f41f351204ec29a5bb0e3ff93d79edb0494f0db9595d02e5",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "text-03",
+      "split": "eval",
+      "initial_version": "6cfb989750e0c19e988aea9c75d85e72a221580e554f3e3aa7e91179a32b999b",
+      "source_sha256": {
+        "textkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "textkit/core.py": "c4f22e97b291d4bd4e5cc4dfbda9b9f9f36861b77d4aecd1e0721ee7d47833e9",
+        "textkit/tokens.py": "f8cb903450c2a958d83c4e6cd148c3aeba916f580dfb5f7aea376ff82e9ae80e",
+        "textkit/matching.py": "2c61a21d74a21dc312775583fa6d2e14ac281c519988f4611d7a6225cec51260",
+        "tests/test_public.py": "97ad45cb073751806c51167f3b1c3a3e0965d7c257b9f15fb6e5f88dc7280471",
+        "README.md": "eed47f590c4dc84029c5fdc1f78242e01e790b8c4eb872b2592c69a086b6d252"
+      },
+      "issue_sha256": "af8537cf6966585dac94cd2915532e1a7450774e3028f3fcea8ca95e61f38ecc",
+      "acceptance_sha256": "0fdc27f63dd6006e44fd4371fcb240e89cd5b02ecb82ad3f9445959a99cc07a0",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "text-04",
+      "split": "eval",
+      "initial_version": "624fc16b181193b8ede48fd93144e8b8a3d72071d9a20750a79fe5ceb5bd90d8",
+      "source_sha256": {
+        "textkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "textkit/core.py": "9278d2cf10104bb0c4e263fcfb5ac19b26d9a8c439fe7e0825d27d5ecda8679e",
+        "textkit/tokens.py": "4a60b6ede0b8fde7acdfe671d390399bc009e21f915f13e182efce236b63e86a",
+        "textkit/matching.py": "2c61a21d74a21dc312775583fa6d2e14ac281c519988f4611d7a6225cec51260",
+        "tests/test_public.py": "47acd377e2fecfcf254a51329ea27c7fa707f15b2abacb1d094712894cc4c4c5",
+        "README.md": "eed47f590c4dc84029c5fdc1f78242e01e790b8c4eb872b2592c69a086b6d252"
+      },
+      "issue_sha256": "1d38c57d726b7474d8d6051e07556548b64de26c84bf733fb68a7564f7bb5a2b",
+      "acceptance_sha256": "c25a47ae1f3b04ac3f2144bbbc3218bea648702533baa6a21ed62a2b86fc771b",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "text-05",
+      "split": "eval",
+      "initial_version": "26ff91e43dd29fa0ae691d37dc7128f6524fb7b5c0b60974bb1e29cd2c047b83",
+      "source_sha256": {
+        "textkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "textkit/core.py": "4ff66676b90ba75cb5d2ca07a86efa09ed5b9cc13fc23e86818f72544b012b5c",
+        "textkit/tokens.py": "f8cb903450c2a958d83c4e6cd148c3aeba916f580dfb5f7aea376ff82e9ae80e",
+        "textkit/matching.py": "2c61a21d74a21dc312775583fa6d2e14ac281c519988f4611d7a6225cec51260",
+        "tests/test_public.py": "bda0d99ae1d3d2195bea0f8135d251be2ac4841241cb53c74fc432932d06454c",
+        "README.md": "eed47f590c4dc84029c5fdc1f78242e01e790b8c4eb872b2592c69a086b6d252"
+      },
+      "issue_sha256": "0503b98dfb47f9c159ab18c5b2778963d58533fbb97ee7d2804097109ba32a3a",
+      "acceptance_sha256": "801b61c985f353a8d2911de60ae6b5f201ad9974ea42eca1bd1271b1696c5854",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "catalog-01",
+      "split": "dev",
+      "initial_version": "51140ef585efe00f4507e0677015b2152e4f25777e8f6f55e19fbd60c5969af6",
+      "source_sha256": {
+        "shopkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "shopkit/money.py": "fae6d58065a22e3ff94369641414aafc4709d2b317f0e7867ff87e2748e09acf",
+        "shopkit/cart.py": "21dd92eb5acd288684f32841709dc551307c1692e2ff584c336ec5683cb3091b",
+        "shopkit/inventory.py": "33b19b981b735e90c824a54100fd52258b8b0696187a4877291524f296aa5af4",
+        "shopkit/paging.py": "ae2e23e3acbd23203e7d32f2b67c17b6e7c3cf4380747d2227ee42c188342737",
+        "tests/test_public.py": "0d185c76ec2e95383f7f0debeb37e717c550a9117d53560b11312e5794cf567f",
+        "README.md": "3f7f31cdf5c6c26f327cdd5611a1a0efa6183129a070509ba520c3102478cc14"
+      },
+      "issue_sha256": "2f0236ea4fcf89019f5ea16ebe0a53bcc5158e0e3bea49206ba0d76cbd894718",
+      "acceptance_sha256": "675a722d77f8f5657c72759486395f4112125383c73fc843f8c5a725ab025513",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "catalog-02",
+      "split": "dev",
+      "initial_version": "0a54d5b149bd9e3f73aea0784cef50eb905390193a88accbd6527610428b752f",
+      "source_sha256": {
+        "shopkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "shopkit/money.py": "b6139d040d2a249deb17a32677ed17b39b63e29d1b860c9ae8b45c3151d4bd03",
+        "shopkit/cart.py": "21dd92eb5acd288684f32841709dc551307c1692e2ff584c336ec5683cb3091b",
+        "shopkit/inventory.py": "33b19b981b735e90c824a54100fd52258b8b0696187a4877291524f296aa5af4",
+        "shopkit/paging.py": "ae2e23e3acbd23203e7d32f2b67c17b6e7c3cf4380747d2227ee42c188342737",
+        "tests/test_public.py": "50ba9c67ae4d8b265d8df79189efbe70ed8b39f8924c111b14e58fe298330184",
+        "README.md": "3f7f31cdf5c6c26f327cdd5611a1a0efa6183129a070509ba520c3102478cc14"
+      },
+      "issue_sha256": "231d315b56ebbf2ca219ed628ef4ab8d15979f8f0763c2afab0426b420b3469e",
+      "acceptance_sha256": "9b3ec17246ef785dc4289902dbd6334ca5da5b715fc85e43cbd57d31f6bb1b66",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "catalog-03",
+      "split": "eval",
+      "initial_version": "8ac56ab6e8ae1012f77d7495b7bb4113533c73f5d1ba1bcc3f4f5378014f77e3",
+      "source_sha256": {
+        "shopkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "shopkit/money.py": "369c8c36c4ae1f5eba865dc6a787430c937aaaa546acff59f37aacfb8e5da6d7",
+        "shopkit/cart.py": "21dd92eb5acd288684f32841709dc551307c1692e2ff584c336ec5683cb3091b",
+        "shopkit/inventory.py": "10c7a36fb2376f3410ad7f3fc6a751b854a229dc551a1926b4addc088c7d98b4",
+        "shopkit/paging.py": "ae2e23e3acbd23203e7d32f2b67c17b6e7c3cf4380747d2227ee42c188342737",
+        "tests/test_public.py": "ad64e4842bc2f7cdded52924104e93781fd203042b12b56132d6d63c70879718",
+        "README.md": "3f7f31cdf5c6c26f327cdd5611a1a0efa6183129a070509ba520c3102478cc14"
+      },
+      "issue_sha256": "c74f4d7e2db5cfed701458e62ab544fa5b5cc0d06df0d879d72774e5fafa9589",
+      "acceptance_sha256": "42fcbae2144a8672e6389966de68b8959c5bf616f17cf1dfd6d5f35abce2615f",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "catalog-04",
+      "split": "eval",
+      "initial_version": "fe17a732dc7b8a5ba69bb06ce45a1339fa62c535df0e09bf687aa2072ae965e2",
+      "source_sha256": {
+        "shopkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "shopkit/money.py": "369c8c36c4ae1f5eba865dc6a787430c937aaaa546acff59f37aacfb8e5da6d7",
+        "shopkit/cart.py": "21dd92eb5acd288684f32841709dc551307c1692e2ff584c336ec5683cb3091b",
+        "shopkit/inventory.py": "33b19b981b735e90c824a54100fd52258b8b0696187a4877291524f296aa5af4",
+        "shopkit/paging.py": "81132f66b011f59b82c7bd7e40a32a79bd16182969af425d8a11ec76337e35ad",
+        "tests/test_public.py": "8b84139f7dc8d307fdb0827994490c2bcde19ede6debb40acbcfb05d082b171d",
+        "README.md": "3f7f31cdf5c6c26f327cdd5611a1a0efa6183129a070509ba520c3102478cc14"
+      },
+      "issue_sha256": "1993d324bb98463d7e4ae244efeabecedad633e74b4a0785500c94b1533fc695",
+      "acceptance_sha256": "2316d3406b7d3f268fcfc84b13f034bbee0d421e03435a74414d9815a649e779",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    },
+    {
+      "id": "catalog-05",
+      "split": "eval",
+      "initial_version": "0d76149785c67dfd7df870490680ee5ea643d05d7ef08d33f5a95afd6b6ca3a3",
+      "source_sha256": {
+        "shopkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "shopkit/money.py": "369c8c36c4ae1f5eba865dc6a787430c937aaaa546acff59f37aacfb8e5da6d7",
+        "shopkit/cart.py": "f54be84540006ddae07ac845cae904c0b9b18ec7802925ea9c5f5720cad2158e",
+        "shopkit/inventory.py": "33b19b981b735e90c824a54100fd52258b8b0696187a4877291524f296aa5af4",
+        "shopkit/paging.py": "ae2e23e3acbd23203e7d32f2b67c17b6e7c3cf4380747d2227ee42c188342737",
+        "tests/test_public.py": "f12861bf16968ebfd76ecee7403eea0515cbbde17c148ea1bbc1d219fdd5e035",
+        "README.md": "3f7f31cdf5c6c26f327cdd5611a1a0efa6183129a070509ba520c3102478cc14"
+      },
+      "issue_sha256": "5a47a1ed10468709b98ce1dafb9ef6ccdaf673177eb1e8cdfb6782d7c4ecdd4a",
+      "acceptance_sha256": "ba63666099b573b8dbae0d985931ea098e8e9ac6f8f8aba8cf36d0452eff0f43",
+      "original_public_exit_code": 1,
+      "reference_public_and_acceptance_exit_code": 0,
+      "result_basis": "Passed pytest assertion in test_authored_bug_reproduces_and_reference_passes"
+    }
+  ]
+}

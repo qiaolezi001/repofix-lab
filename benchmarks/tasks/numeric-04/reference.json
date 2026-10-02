@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "numberkit/weights.py",
+      "old": "return len(weights)",
+      "new": "return sum(weights)"
+    }
+  ]
+}

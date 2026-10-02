@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>RepoFix Lab · Issue 修复实验台</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到任务</a>
+  <header class="masthead">
+    <a class="brand" href="/" aria-label="RepoFix Lab 首页"><span class="brand-icon" aria-hidden="true">r<span>↗</span></span><span>RepoFix <strong>Lab</strong><small>ISSUE → EVIDENCE → PATCH</small></span></a>
+    <div class="header-right"><span class="local-pill"><i></i> LOCAL WORKSPACE</span><a href="https://github.com/topics/agent" target="_blank" rel="noreferrer" class="quiet-link">Agent engineering ↗</a></div>
+  </header>
+  <div class="workspace">
+    <aside class="sidebar" aria-label="任务历史">
+      <div class="sidebar-title"><span>实验记录</span><button id="refresh-tasks" class="icon-button" aria-label="刷新任务历史" title="刷新任务历史">↻</button></div>
+      <button id="new-task" class="new-button">＋ 新建修复任务</button>
+      <div id="task-list" class="task-list"><p class="subtle sidebar-empty">正在加载任务…</p></div>
+      <div class="sidebar-footer"><span class="footer-mark">⌁</span><p>每一次修复，都留下证据。<br><span>v0.1 · 单用户本地实验</span></p></div>
+    </aside>
+    <main id="main" tabindex="-1">
+      <div class="page-heading"><div><p class="eyebrow">CODE REPAIR WORKBENCH</p><h1>把问题，变成可验证的修复。</h1><p class="lead">检索代码证据，生成补丁，通过测试反馈继续迭代。</p></div><span class="version">RESEARCH / v0.1</span></div>
+      <div id="alert" class="alert" role="alert" hidden></div>
+      <section class="environment" aria-label="运行环境"><div><span class="status-dot" id="docker-dot"></span><strong id="docker-label">检查测试环境…</strong><span id="docker-details" class="subtle"></span></div><span id="model-label" class="mono">—</span></section>
+      <section id="composer" class="card composer" aria-labelledby="composer-title">
+        <div class="section-heading"><div><p class="eyebrow">01 / NEW EXPERIMENT</p><h2 id="composer-title">提交一个 Issue</h2></div><button id="load-demo" class="button secondary">载入示例 ↗</button></div>
+        <form id="task-form">
+          <label for="source">本地 Python 代码库 <span class="label-hint">使用服务器所在机器的路径</span></label>
+          <input id="source" name="source" class="mono" placeholder="例如 C:\projects\small-python-repo" required autocomplete="off">
+          <label for="issue">问题描述 <span class="label-hint">包含预期行为、实际行为和复现条件</span></label>
+          <textarea id="issue" name="issue" placeholder="描述一个可复现的问题。Agent 将读取工作副本中的代码和公开测试。" rows="4" required></textarea>
+          <div class="form-bottom"><div class="controls"><div><label for="mode">运行模式</label><select id="mode"><option value="mock">Mock · 离线演示</option><option value="live">Live · 真实模型</option></select></div><div><label for="strategy">修复策略</label><select id="strategy"><option value="agent">Agent · 检索与测试迭代</option><option value="baseline">Baseline · 单次候选补丁</option></select></div></div><button id="submit-task" class="button primary" type="submit"><span>启动修复</span><span aria-hidden="true">→</span></button></div>
+          <p id="mode-note" class="mode-note"><span class="badge mock">MOCK</span> 确定性演示只验证工程流程，不能证明模型修复能力。</p>
+          <div id="paid-panel" class="paid-panel" hidden><label class="checkbox-label"><input id="allow-paid" type="checkbox"><span>允许这一次真实模型任务的 API 调用（最多 <span id="paid-budget">8</span> 次；提供商可能收费，实际价格需自行核对）。</span></label><p>密钥从服务器环境变量读取。请勿把密钥写入 Issue。批量评测另需命令行授权。</p></div>
+        </form>
+      </section>
+      <section id="detail" class="card task-detail" aria-labelledby="detail-title" hidden>
+        <div class="section-heading detail-heading"><div><p id="task-id" class="eyebrow mono">02 / RUN</p><h2 id="detail-title">执行记录</h2></div><div class="detail-actions"><span id="task-mode" class="badge mock">MOCK</span><span id="task-status" class="badge">—</span><button id="cancel-task" class="button secondary" hidden>取消任务</button><button id="resume-task" class="button secondary" hidden>恢复任务</button></div></div>
+        <p id="detail-issue" class="detail-issue"></p>
+        <ol class="pipeline" aria-label="修复流程"><li data-stage="inspect"><b>01</b><span>代码检索</span></li><li data-stage="patch"><b>02</b><span>候选补丁</span></li><li data-stage="test"><b>03</b><span>测试反馈</span></li><li data-stage="report"><b>04</b><span>证据报告</span></li></ol>
+        <div class="metrics"><div><span>模型调用</span><strong id="metric-calls">—</strong></div><div><span>Token 用量</span><strong id="metric-tokens">—</strong></div><div><span>任务耗时</span><strong id="metric-time">—</strong></div><div><span>独立验收</span><strong id="metric-independent">尚未测量</strong></div></div>
+        <div class="tabs" role="tablist" aria-label="任务输出"><button role="tab" id="tab-report" aria-controls="panel-report" aria-selected="true" tabindex="0" data-tab="report">结果报告</button><button role="tab" id="tab-evidence" aria-controls="panel-evidence" aria-selected="false" tabindex="-1" data-tab="evidence">代码证据 <span id="evidence-count">0</span></button><button role="tab" id="tab-diff" aria-controls="panel-diff" aria-selected="false" tabindex="-1" data-tab="diff">修复补丁</button><button role="tab" id="tab-tests" aria-controls="panel-tests" aria-selected="false" tabindex="-1" data-tab="tests">测试结果</button></div>
+        <div class="tab-panels"><div id="panel-report" role="tabpanel" aria-labelledby="tab-report"><div class="report-heading"><h3>本次执行结论</h3><div><a id="report-md" class="quiet-link" href="#" download>Markdown ↓</a><a id="report-json" class="quiet-link" href="#" download>JSON ↓</a></div></div><p id="summary" class="summary">任务已创建，等待执行。</p><div id="task-error" class="inline-error" hidden></div><div id="verification" class="verification"></div><p class="report-footnote">候选补丁、公开测试通过和独立评测通过是三个不同阶段。Mock 结果仅代表流程验证。</p></div><div id="panel-evidence" role="tabpanel" aria-labelledby="tab-evidence" hidden><div id="evidence-list" class="evidence-list"></div></div><div id="panel-diff" role="tabpanel" aria-labelledby="tab-diff" hidden><div class="report-heading"><h3>候选补丁</h3><button id="download-patch" class="quiet-button" disabled>导出 patch ↓</button></div><pre id="diff" class="code-block">暂未生成补丁。</pre></div><div id="panel-tests" role="tabpanel" aria-labelledby="tab-tests" hidden><div id="test-summary" class="test-summary"></div><pre id="test-output" class="code-block">尚未运行公开测试。</pre></div></div>
+        <div class="activity"><div class="activity-heading"><h3>执行轨迹</h3><span class="subtle">工具调用 · 状态变化 · 简短决策摘要</span></div><ol id="events" class="event-list"></ol></div>
+      </section>
+      <section id="welcome" class="welcome" aria-label="项目工作方式"><div><span>01 / EVIDENCE</span><h3>带上代码证据</h3><p>AST 切分与 BM25 检索，保留路径、符号、行号和版本。</p></div><div><span>02 / FEEDBACK</span><h3>让测试提供反馈</h3><p>补丁在独立工作副本中生成，公开测试在 Docker 内运行。</p></div><div><span>03 / TRACE</span><h3>保留完整执行记录</h3><p>SQLite 持久化状态与工具结果，导出可复查的报告。</p></div></section>
+      <footer class="main-footer"><span>RepoFix Lab</span><span>Evidence first. Test before trust.</span></footer>
+    </main>
+  </div>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>

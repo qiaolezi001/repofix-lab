@@ -1,0 +1,37 @@
+{
+  "task_id": "numeric-04",
+  "strategy": "agent",
+  "mode": "mock",
+  "engine_task_id": "ff5495d7886b48df92eeac2dc1b93dd2",
+  "initial_version": "85baca46bc572c23baefa2f6911b13b15cf87858e4a5abbf71f2e096887268fd",
+  "acceptance_sha256": "af04d752d66b4e6790d65bdbea4855c2a7857562ec847a697a89ceb21c8c2db3",
+  "category": "cross_file",
+  "status": "completed",
+  "summary": "Scripted mock workflow finished. Inspect real tool evidence and verification status. This is not evidence of model repair accuracy.",
+  "error": null,
+  "model_errors": 0,
+  "candidate_proposed": false,
+  "test_integrity_errors": [],
+  "public_tests": {
+    "status": "not_run"
+  },
+  "independent_acceptance": {
+    "status": "not_measured",
+    "reason": "mock engineering run"
+  },
+  "repair_success": null,
+  "wall_seconds": 0.219,
+  "usage": {
+    "model_calls": 3,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "tokens_known": true,
+    "cost_usd": null,
+    "elapsed_seconds": 0.156,
+    "mock": true,
+    "max_context_chars": 4488
+  },
+  "cost_usd": null,
+  "failure_type": "no_patch"
+}

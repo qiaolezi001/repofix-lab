@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "shopkit/paging.py",
+      "old": "start = (page - 1) * page_size + 1",
+      "new": "start = (page - 1) * page_size"
+    }
+  ]
+}

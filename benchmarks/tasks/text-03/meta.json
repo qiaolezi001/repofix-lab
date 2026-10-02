@@ -1,0 +1,20 @@
+{
+  "id": "text-03",
+  "project": "text",
+  "split": "eval",
+  "category": "exception",
+  "provenance": "self-authored; one artificially injected bug; MIT",
+  "initial_version": "6cfb989750e0c19e988aea9c75d85e72a221580e554f3e3aa7e91179a32b999b",
+  "source_sha256": {
+    "textkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "textkit/core.py": "c4f22e97b291d4bd4e5cc4dfbda9b9f9f36861b77d4aecd1e0721ee7d47833e9",
+    "textkit/tokens.py": "f8cb903450c2a958d83c4e6cd148c3aeba916f580dfb5f7aea376ff82e9ae80e",
+    "textkit/matching.py": "2c61a21d74a21dc312775583fa6d2e14ac281c519988f4611d7a6225cec51260",
+    "tests/test_public.py": "97ad45cb073751806c51167f3b1c3a3e0965d7c257b9f15fb6e5f88dc7280471",
+    "README.md": "eed47f590c4dc84029c5fdc1f78242e01e790b8c4eb872b2592c69a086b6d252"
+  },
+  "public_tests": "tests",
+  "hidden_tests": "hidden/test_acceptance.py",
+  "issue_sha256": "af8537cf6966585dac94cd2915532e1a7450774e3028f3fcea8ca95e61f38ecc",
+  "acceptance_sha256": "0fdc27f63dd6006e44fd4371fcb240e89cd5b02ecb82ad3f9445959a99cc07a0"
+}

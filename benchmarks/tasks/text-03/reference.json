@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "textkit/core.py",
+      "old": "if not found:\n        return key, \"\"",
+      "new": "if not found:\n        raise ValueError(\"delimiter was not found\")"
+    }
+  ]
+}

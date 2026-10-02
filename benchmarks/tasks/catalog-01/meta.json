@@ -1,0 +1,21 @@
+{
+  "id": "catalog-01",
+  "project": "catalog",
+  "split": "dev",
+  "category": "arithmetic",
+  "provenance": "self-authored; one artificially injected bug; MIT",
+  "initial_version": "51140ef585efe00f4507e0677015b2152e4f25777e8f6f55e19fbd60c5969af6",
+  "source_sha256": {
+    "shopkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shopkit/money.py": "fae6d58065a22e3ff94369641414aafc4709d2b317f0e7867ff87e2748e09acf",
+    "shopkit/cart.py": "21dd92eb5acd288684f32841709dc551307c1692e2ff584c336ec5683cb3091b",
+    "shopkit/inventory.py": "33b19b981b735e90c824a54100fd52258b8b0696187a4877291524f296aa5af4",
+    "shopkit/paging.py": "ae2e23e3acbd23203e7d32f2b67c17b6e7c3cf4380747d2227ee42c188342737",
+    "tests/test_public.py": "0d185c76ec2e95383f7f0debeb37e717c550a9117d53560b11312e5794cf567f",
+    "README.md": "3f7f31cdf5c6c26f327cdd5611a1a0efa6183129a070509ba520c3102478cc14"
+  },
+  "public_tests": "tests",
+  "hidden_tests": "hidden/test_acceptance.py",
+  "issue_sha256": "2f0236ea4fcf89019f5ea16ebe0a53bcc5158e0e3bea49206ba0d76cbd894718",
+  "acceptance_sha256": "675a722d77f8f5657c72759486395f4112125383c73fc843f8c5a725ab025513"
+}

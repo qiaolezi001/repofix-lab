@@ -1,0 +1,37 @@
+{
+  "task_id": "text-03",
+  "strategy": "baseline",
+  "mode": "mock",
+  "engine_task_id": "ce06787423d24496937b05a101aedb7d",
+  "initial_version": "6cfb989750e0c19e988aea9c75d85e72a221580e554f3e3aa7e91179a32b999b",
+  "acceptance_sha256": "0fdc27f63dd6006e44fd4371fcb240e89cd5b02ecb82ad3f9445959a99cc07a0",
+  "category": "exception",
+  "status": "completed",
+  "summary": "MOCK baseline has no scripted patch for this repository; real model accuracy remains unmeasured.",
+  "error": null,
+  "model_errors": 0,
+  "candidate_proposed": false,
+  "test_integrity_errors": [],
+  "public_tests": {
+    "status": "not_run"
+  },
+  "independent_acceptance": {
+    "status": "not_measured",
+    "reason": "mock engineering run"
+  },
+  "repair_success": null,
+  "wall_seconds": 0.141,
+  "usage": {
+    "model_calls": 1,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "tokens_known": true,
+    "cost_usd": null,
+    "elapsed_seconds": 0.078,
+    "mock": true,
+    "max_context_chars": 2565
+  },
+  "cost_usd": null,
+  "failure_type": "no_patch"
+}

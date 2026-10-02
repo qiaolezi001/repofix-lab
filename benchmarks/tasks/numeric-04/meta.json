@@ -1,0 +1,20 @@
+{
+  "id": "numeric-04",
+  "project": "numeric",
+  "split": "eval",
+  "category": "cross_file",
+  "provenance": "self-authored; one artificially injected bug; MIT",
+  "initial_version": "85baca46bc572c23baefa2f6911b13b15cf87858e4a5abbf71f2e096887268fd",
+  "source_sha256": {
+    "numberkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "numberkit/bounds.py": "aa6277b94520c983219d69247722d94a14a777ba4cac422bc106315685018da6",
+    "numberkit/stats.py": "c049137e6c548b248d5698a72f16c900c4056d2eac813e3e862d3e6f0beecadc",
+    "numberkit/weights.py": "380d389856eef3c01f31a880297d1e9bcb31d8e2e7459567010f963385acf7a6",
+    "tests/test_public.py": "9d0a72963447e3122f10edd44bf569d39e5412d0457972435b7c9dc175804d2b",
+    "README.md": "9ba0d5d5dab062ac0aa1a3ee2e72550db6049ea5de928a7e0cfdcbd5444741b4"
+  },
+  "public_tests": "tests",
+  "hidden_tests": "hidden/test_acceptance.py",
+  "issue_sha256": "04f66d4ca73c56bb5990ac5cb200f0ecf818ad53ff029c299358637b27c7ca07",
+  "acceptance_sha256": "af04d752d66b4e6790d65bdbea4855c2a7857562ec847a697a89ceb21c8c2db3"
+}

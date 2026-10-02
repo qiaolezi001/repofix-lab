@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-03",
+  "timezone": "Asia/Shanghai",
+  "release": "0.1.0",
+  "platform": "Windows",
+  "python": "3.11.9",
+  "uv": "0.12.13",
+  "pytest": {
+    "passed": 119,
+    "skipped": 1,
+    "failed": 0,
+    "duration_seconds": 28.83,
+    "skip_reason": "symlink creation privilege unavailable"
+  },
+  "ruff_check": "passed",
+  "ruff_format": "passed",
+  "post_full_suite_api_check": {
+    "passed": 4,
+    "failed": 0,
+    "reason": "Disable CDN API documentation under offline CSP; retain tested OpenAPI schema",
+    "actual_service_ui_and_schema": "HTTP 200"
+  },
+  "source_archive_check": {
+    "files": 257,
+    "frozen_fixture_hashes_verified": 15,
+    "runtime_cache_secret_paths_excluded": true
+  },
+  "mypy": {
+    "status": "passed",
+    "source_modules": 14
+  },
+  "browser": {
+    "mode": "mock",
+    "actual_browser": "headless Microsoft Edge",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "task_status": "completed",
+    "public_tests": "unavailable",
+    "checks": [
+      "demo submission",
+      "source evidence",
+      "candidate diff",
+      "keyboard tabs",
+      "report download",
+      "mobile no overflow",
+      "invalid path error"
+    ],
+    "page_errors": [],
+    "real_model_metrics": null
+  },
+  "wheel_install_smoke": {
+    "status": "passed",
+    "outside_checkout": true,
+    "packaged_benchmark_tasks": 15,
+    "demo_candidate": true,
+    "public_tests": "unavailable"
+  },
+  "real_provider_validation": "not_run",
+  "real_model_metrics": null,
+  "docker_execution": "unavailable",
+  "remote_ci": "not_run",
+  "github_publication": "repository_created_push_pending",
+  "review_regressions": 15,
+  "publication_confirmation": "authorized_by_user",
+  "repository_url": "https://github.com/qiaolezi001/repofix-lab"
+}

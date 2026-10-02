@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "numberkit/stats.py",
+      "old": "return sum(values) / (len(values) - 1)",
+      "new": "return sum(values) / len(values)"
+    }
+  ]
+}

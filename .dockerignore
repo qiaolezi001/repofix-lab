@@ -1,0 +1,13 @@
+.git
+.venv
+.repofix
+.env
+.env.*
+!.env.example
+__pycache__
+.pytest_cache
+.ruff_cache
+.mypy_cache
+work
+dist
+*.zip

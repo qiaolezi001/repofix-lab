@@ -1,0 +1,25 @@
+{
+  "mode": "mock",
+  "actual_browser": "headless Microsoft Edge",
+  "viewport": [
+    1440,
+    1000
+  ],
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "task_status": "completed",
+  "public_tests": "unavailable",
+  "checks": [
+    "demo submission",
+    "source evidence",
+    "candidate diff",
+    "keyboard tabs",
+    "report download",
+    "mobile no overflow",
+    "invalid path error"
+  ],
+  "page_errors": [],
+  "real_model_metrics": null
+}

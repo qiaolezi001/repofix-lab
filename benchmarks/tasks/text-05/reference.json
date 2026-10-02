@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "textkit/core.py",
+      "old": "return re.sub(r\"[^a-z0-9]\", \"-\", text.lower()).strip(\"-\")",
+      "new": "return re.sub(r\"[^a-z0-9]+\", \"-\", text.lower()).strip(\"-\")"
+    }
+  ]
+}

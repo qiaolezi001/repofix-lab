@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "textkit/core.py",
+      "old": "return text[:max(0, limit - 1)]",
+      "new": "return text[:limit]"
+    }
+  ]
+}

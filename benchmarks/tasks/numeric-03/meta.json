@@ -1,0 +1,20 @@
+{
+  "id": "numeric-03",
+  "project": "numeric",
+  "split": "eval",
+  "category": "exception",
+  "provenance": "self-authored; one artificially injected bug; MIT",
+  "initial_version": "3fc3e64c6457e962e5ddead205cc4bdfb917121dd7661a3c8a02e930baeb6622",
+  "source_sha256": {
+    "numberkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "numberkit/bounds.py": "aa6277b94520c983219d69247722d94a14a777ba4cac422bc106315685018da6",
+    "numberkit/stats.py": "2deda60881f24e58fdeeeb2d6d34fc32970b2b3a491dee98a8b2cc4c8eb05ab2",
+    "numberkit/weights.py": "327f894e9392bba3b7728fcaef48984e6c81ce4e133fa3fe6bc63648e602f95a",
+    "tests/test_public.py": "20e63ab2c57f7a678edf92388ccfc36d58804092ff9719db0f9ea356c5963e56",
+    "README.md": "9ba0d5d5dab062ac0aa1a3ee2e72550db6049ea5de928a7e0cfdcbd5444741b4"
+  },
+  "public_tests": "tests",
+  "hidden_tests": "hidden/test_acceptance.py",
+  "issue_sha256": "9fe622ebe28ec043a461fc371402007672e8420441150c0886e5f9c3e09af401",
+  "acceptance_sha256": "095ad63110eaa16cf86f7cb811dcff7b8f261b3e1870a52d00353ac7080f2f5a"
+}

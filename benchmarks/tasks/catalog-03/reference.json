@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "shopkit/inventory.py",
+      "old": "if quantity < 0:\n        pass",
+      "new": "if quantity < 0:\n        raise ValueError(\"quantity must not be negative\")"
+    }
+  ]
+}

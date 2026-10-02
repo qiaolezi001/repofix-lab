@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "shopkit/money.py",
+      "old": "return price + quantity",
+      "new": "return price * quantity"
+    }
+  ]
+}

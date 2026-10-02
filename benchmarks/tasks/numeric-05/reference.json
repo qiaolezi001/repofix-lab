@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "numberkit/bounds.py",
+      "old": "if low == high:\n        pass",
+      "new": "if low == high:\n        return [0.0 for _ in values]"
+    }
+  ]
+}

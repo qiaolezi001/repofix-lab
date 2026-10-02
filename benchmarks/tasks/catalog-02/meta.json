@@ -1,0 +1,21 @@
+{
+  "id": "catalog-02",
+  "project": "catalog",
+  "split": "dev",
+  "category": "cross_file",
+  "provenance": "self-authored; one artificially injected bug; MIT",
+  "initial_version": "0a54d5b149bd9e3f73aea0784cef50eb905390193a88accbd6527610428b752f",
+  "source_sha256": {
+    "shopkit/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shopkit/money.py": "b6139d040d2a249deb17a32677ed17b39b63e29d1b860c9ae8b45c3151d4bd03",
+    "shopkit/cart.py": "21dd92eb5acd288684f32841709dc551307c1692e2ff584c336ec5683cb3091b",
+    "shopkit/inventory.py": "33b19b981b735e90c824a54100fd52258b8b0696187a4877291524f296aa5af4",
+    "shopkit/paging.py": "ae2e23e3acbd23203e7d32f2b67c17b6e7c3cf4380747d2227ee42c188342737",
+    "tests/test_public.py": "50ba9c67ae4d8b265d8df79189efbe70ed8b39f8924c111b14e58fe298330184",
+    "README.md": "3f7f31cdf5c6c26f327cdd5611a1a0efa6183129a070509ba520c3102478cc14"
+  },
+  "public_tests": "tests",
+  "hidden_tests": "hidden/test_acceptance.py",
+  "issue_sha256": "231d315b56ebbf2ca219ed628ef4ab8d15979f8f0763c2afab0426b420b3469e",
+  "acceptance_sha256": "9b3ec17246ef785dc4289902dbd6334ca5da5b715fc85e43cbd57d31f6bb1b66"
+}

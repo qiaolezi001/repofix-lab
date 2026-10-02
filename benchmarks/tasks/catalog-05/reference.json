@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "shopkit/cart.py",
+      "old": "return sum(line_total(item[\"price\"], item[\"quantity\"]) for item in items) / len(items)",
+      "new": "return sum(line_total(item[\"price\"], item[\"quantity\"]) for item in items)"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# Frozen fixture hashes refer to exact bytes on every platform.
+benchmarks/tasks/** -text
+examples/demo/** -text
+*.png binary

@@ -1,0 +1,112 @@
+{
+  "version": "synthetic-v0.1",
+  "provenance": "self-authored artificial bugs; MIT",
+  "split_policy": "first two ids of each project are dev; remaining three are frozen eval",
+  "tasks": [
+    {
+      "id": "numeric-01",
+      "project": "numeric",
+      "split": "dev",
+      "category": "boundary",
+      "initial_version": "a0671ccbbaf79ef73a9c53ee03a72a480004f91a0170c0010deb87d5a35e4593"
+    },
+    {
+      "id": "numeric-02",
+      "project": "numeric",
+      "split": "dev",
+      "category": "arithmetic",
+      "initial_version": "9ce84b0d88aa0d4d23193f67199b88961b907c77cf157ef08531e307478e0645"
+    },
+    {
+      "id": "numeric-03",
+      "project": "numeric",
+      "split": "eval",
+      "category": "exception",
+      "initial_version": "3fc3e64c6457e962e5ddead205cc4bdfb917121dd7661a3c8a02e930baeb6622"
+    },
+    {
+      "id": "numeric-04",
+      "project": "numeric",
+      "split": "eval",
+      "category": "cross_file",
+      "initial_version": "85baca46bc572c23baefa2f6911b13b15cf87858e4a5abbf71f2e096887268fd"
+    },
+    {
+      "id": "numeric-05",
+      "project": "numeric",
+      "split": "eval",
+      "category": "edge_case",
+      "initial_version": "1cd6d1c4d6e395c5b5d903cf9783ef96e33183c86820b9b523349e53933fa1c0"
+    },
+    {
+      "id": "text-01",
+      "project": "text",
+      "split": "dev",
+      "category": "boundary",
+      "initial_version": "e91b93908ad0c0b4916357c3be8e0a6ce88d8f06ef1256b88780d660c67d3fe8"
+    },
+    {
+      "id": "text-02",
+      "project": "text",
+      "split": "dev",
+      "category": "boundary",
+      "initial_version": "ac9f9659e897107897a1a691c85996bc46271d4817f8d0cf16fca4b79beb082c"
+    },
+    {
+      "id": "text-03",
+      "project": "text",
+      "split": "eval",
+      "category": "exception",
+      "initial_version": "6cfb989750e0c19e988aea9c75d85e72a221580e554f3e3aa7e91179a32b999b"
+    },
+    {
+      "id": "text-04",
+      "project": "text",
+      "split": "eval",
+      "category": "cross_file",
+      "initial_version": "624fc16b181193b8ede48fd93144e8b8a3d72071d9a20750a79fe5ceb5bd90d8"
+    },
+    {
+      "id": "text-05",
+      "project": "text",
+      "split": "eval",
+      "category": "edge_case",
+      "initial_version": "26ff91e43dd29fa0ae691d37dc7128f6524fb7b5c0b60974bb1e29cd2c047b83"
+    },
+    {
+      "id": "catalog-01",
+      "project": "catalog",
+      "split": "dev",
+      "category": "arithmetic",
+      "initial_version": "51140ef585efe00f4507e0677015b2152e4f25777e8f6f55e19fbd60c5969af6"
+    },
+    {
+      "id": "catalog-02",
+      "project": "catalog",
+      "split": "dev",
+      "category": "cross_file",
+      "initial_version": "0a54d5b149bd9e3f73aea0784cef50eb905390193a88accbd6527610428b752f"
+    },
+    {
+      "id": "catalog-03",
+      "project": "catalog",
+      "split": "eval",
+      "category": "exception",
+      "initial_version": "8ac56ab6e8ae1012f77d7495b7bb4113533c73f5d1ba1bcc3f4f5378014f77e3"
+    },
+    {
+      "id": "catalog-04",
+      "project": "catalog",
+      "split": "eval",
+      "category": "boundary",
+      "initial_version": "fe17a732dc7b8a5ba69bb06ce45a1339fa62c535df0e09bf687aa2072ae965e2"
+    },
+    {
+      "id": "catalog-05",
+      "project": "catalog",
+      "split": "eval",
+      "category": "edge_case",
+      "initial_version": "0d76149785c67dfd7df870490680ee5ea643d05d7ef08d33f5a95afd6b6ca3a3"
+    }
+  ]
+}

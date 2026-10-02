@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "textkit/core.py",
+      "old": "return \" \".join(text.split(\" \"))",
+      "new": "return \" \".join(text.split())"
+    }
+  ]
+}

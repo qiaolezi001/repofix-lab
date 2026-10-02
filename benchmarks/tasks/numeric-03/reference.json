@@ -1,0 +1,10 @@
+{
+  "provenance": "Author reference patch, never provided to Agent",
+  "edits": [
+    {
+      "path": "numberkit/stats.py",
+      "old": "if not values:\n        pass",
+      "new": "if not values:\n        raise ValueError(\"mean requires at least one value\")"
+    }
+  ]
+}
