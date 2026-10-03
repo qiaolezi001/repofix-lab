@@ -133,6 +133,19 @@ class LiveProvider:
             raise ProviderError(
                 "Model endpoint must not contain credentials, queries or fragments."
             )
+        if settings.proxy_url:
+            proxy = urlparse(settings.proxy_url)
+            if (
+                proxy.scheme not in {"http", "https"}
+                or not proxy.hostname
+                or proxy.username
+                or proxy.password
+                or proxy.query
+                or proxy.fragment
+            ):
+                raise ProviderError(
+                    "Explicit model proxy requires an HTTP(S) URL without credentials."
+                )
         self.settings = settings
         self.transport = transport
 
@@ -151,7 +164,12 @@ class LiveProvider:
         if tools:
             body.update(tools=tools, tool_choice="auto", parallel_tool_calls=False)
         try:
-            with httpx.Client(transport=self.transport, timeout=timeout, trust_env=False) as client:
+            with httpx.Client(
+                transport=self.transport,
+                timeout=timeout,
+                trust_env=False,
+                proxy=self.settings.proxy_url or None,
+            ) as client:
                 response = client.post(
                     self.settings.base_url + "/chat/completions",
                     json=body,

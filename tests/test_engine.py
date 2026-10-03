@@ -528,3 +528,27 @@ def test_receipt_failure_after_source_change_cannot_reuse_previous_passing_tests
     assert state["repairs"] == 1 and sandbox.calls == 2
     assert "page_size + 2" in state["candidate_patch"]
     assert state["verification_calls"] == 1
+
+
+def test_usage_retains_per_response_billing_details_without_inventing_cost():
+    state = {
+        "usage": {
+            "tokens_known": True,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0,
+            "cost_usd": None,
+        }
+    }
+    usage = {
+        "prompt_tokens": 120,
+        "completion_tokens": 30,
+        "total_tokens": 150,
+        "prompt_tokens_details": {"cached_tokens": 80},
+        "completion_tokens_details": {"reasoning_tokens": 12},
+    }
+    Engine._record_usage(state, usage)
+    assert state["usage"]["responses"] == [usage]
+    assert state["usage"]["total_tokens"] == 150
+    assert state["usage"]["tokens_known"] is True
+    assert state["usage"]["cost_usd"] is None

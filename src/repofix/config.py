@@ -11,6 +11,7 @@ class Settings:
     api_key: str = field(default="", repr=False)
     base_url: str = "https://api.openai.com/v1"
     model: str = ""
+    proxy_url: str = field(default="", repr=False)
     sandbox_image: str = "repofix-sandbox:0.1"
     sandbox_timeout: int = 30
 
@@ -21,6 +22,7 @@ class Settings:
             api_key=os.getenv("REPOFIX_API_KEY", os.getenv("OPENAI_API_KEY", "")),
             base_url=os.getenv("REPOFIX_BASE_URL", "https://api.openai.com/v1").rstrip("/"),
             model=os.getenv("REPOFIX_MODEL", ""),
+            proxy_url=os.getenv("REPOFIX_PROXY_URL", ""),
             sandbox_image=os.getenv("REPOFIX_SANDBOX_IMAGE", "repofix-sandbox:0.1"),
             sandbox_timeout=int(os.getenv("REPOFIX_SANDBOX_TIMEOUT", "30")),
         )

@@ -37,6 +37,11 @@ def parser() -> argparse.ArgumentParser:
     evaluate.add_argument("--output", type=Path, default=Path("reports/evaluation"))
     evaluate.add_argument("--allow-paid", action="store_true")
     evaluate.add_argument("--max-calls", type=int, default=12)
+    evaluate.add_argument(
+        "--task-id",
+        action="append",
+        help="Select an explicit task in the split; repeat for a bounded pilot.",
+    )
     resume = commands.add_parser("resume")
     resume.add_argument("task_id")
     show = commands.add_parser("show")
@@ -82,6 +87,7 @@ def main(argv: list[str] | None = None) -> int:
                 output=args.output,
                 allow_paid=args.allow_paid,
                 max_calls=args.max_calls,
+                task_ids=args.task_id,
             )
         else:
             engine = Engine(settings)

@@ -472,6 +472,9 @@ class Engine:
     def _record_usage(state: dict[str, Any], usage: dict[str, Any]) -> None:
         if usage.get("mock"):
             return
+        # Keep the provider's per-response billing details (for example cached
+        # input and reasoning tokens); three aggregate totals cannot price them.
+        state["usage"].setdefault("responses", []).append(usage)
         valid = isinstance(usage, dict) and all(
             type(usage.get(k)) is int and usage[k] >= 0
             for k in ("prompt_tokens", "completion_tokens", "total_tokens")

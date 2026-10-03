@@ -1,10 +1,58 @@
 import json
+import threading
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import httpx
 import pytest
 
 from repofix.config import Settings
 from repofix.providers import LiveProvider, ProviderError, redact
+
+
+@pytest.mark.parametrize(
+    "proxy_url",
+    ["file:///tmp/proxy", "http://", "http://user:secret@localhost:1234", "http://localhost?q=x"],
+)
+def test_invalid_explicit_proxy_is_rejected_before_network(proxy_url):
+    with pytest.raises(ProviderError, match="proxy"):
+        LiveProvider(Settings(api_key="fake", model="fake", proxy_url=proxy_url))
+
+
+def test_model_request_uses_explicit_local_proxy():
+    observations = []
+
+    class ProxyFixture(BaseHTTPRequestHandler):
+        def do_POST(self):
+            observations.append((self.path, self.headers.get("Authorization")))
+            self.rfile.read(int(self.headers["Content-Length"]))
+            response = json.dumps({"choices": [{"message": {"content": "proxy fixture"}}]}).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(response)))
+            self.end_headers()
+            self.wfile.write(response)
+
+        def log_message(self, *args):
+            pass
+
+    server = ThreadingHTTPServer(("127.0.0.1", 0), ProxyFixture)
+    worker = threading.Thread(target=server.serve_forever, daemon=True)
+    worker.start()
+    try:
+        settings = Settings(
+            api_key="fake-test-key",
+            model="local-proxy-fixture",
+            base_url="http://127.0.0.1:1/v1",
+            proxy_url=f"http://127.0.0.1:{server.server_port}",
+        )
+        reply = LiveProvider(settings).complete([], [], timeout=3)
+        assert reply.summary == "proxy fixture"
+        assert observations == [("http://127.0.0.1:1/v1/chat/completions", "Bearer fake-test-key")]
+        assert "proxy_url" not in repr(settings)
+    finally:
+        server.shutdown()
+        server.server_close()
+        worker.join(timeout=3)
 
 
 def test_live_protocol_tool_roundtrip_without_network():

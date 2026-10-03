@@ -112,6 +112,7 @@ def evaluate(
     output: Path | None = None,
     allow_paid: bool = False,
     max_calls: int = 12,
+    task_ids: list[str] | None = None,
 ) -> dict[str, Any]:
     """Run paired baseline/Agent tasks, retaining unknown measurements as null.
 
@@ -123,6 +124,22 @@ def evaluate(
         raise ValueError("mode must be mock or live")
     if not 1 <= max_calls <= 33:
         raise ValueError("max_calls must be between 1 and 33")
+    root = benchmark_root()
+    tasks = load_tasks(split, root)
+    if task_ids is not None:
+        if (
+            not isinstance(task_ids, list)
+            or not task_ids
+            or any(type(task_id) is not str or not task_id for task_id in task_ids)
+        ):
+            raise ValueError("task_ids must be a nonempty list of explicit task ID strings")
+        if len(set(task_ids)) != len(task_ids):
+            raise ValueError("Duplicate task_ids are forbidden")
+        allowed = {item["id"]: item for item in tasks}
+        unknown = [task_id for task_id in task_ids if task_id not in allowed]
+        if unknown:
+            raise ValueError(f"Task IDs are not in the {split} split: {', '.join(unknown)}")
+        tasks = [allowed[task_id] for task_id in task_ids]
     if mode == "live" and not allow_paid:
         raise ValueError("Live batch evaluation requires --allow-paid and an explicit call budget")
     if mode == "live" and (not settings.api_key or not settings.model):
@@ -133,8 +150,6 @@ def evaluate(
     from .sandbox import Sandbox
     from .workspace import Workspace
 
-    root = benchmark_root()
-    tasks = load_tasks(split, root)
     output = Path(output or Path("evaluation-results") / f"{mode}-{split}").resolve()
     if (output / "summary.json").exists():
         raise ValueError(

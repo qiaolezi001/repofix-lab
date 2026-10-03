@@ -57,4 +57,12 @@ The maintainer reviewed the candidate and explicitly authorized public GitHub pu
 
 ## Additional review completed
 
+## Follow-up validation in progress (2026-10-03)
+
+The maintainer requested real Docker and live-model validation after publication. A separate `docker-verification` workflow builds the sandbox and executes actual containers, retaining a JSON artifact. Its ten checks include failing original tests, a tool-applied passing patch, verification guards, observed isolation limits, timeout/cancellation cleanup and the **mock** Agent end-to-end flow. Until the remote run finishes, container execution remains unverified.
+
+The new task-ID selection supports a bounded one-task paired live pilot. Provider response usage details are retained for subsequent pricing, and an explicit opt-in model proxy is supported. Local follow-up checks pass: **140 passed, 2 skipped** in 43.88 seconds; Ruff/format and mypy pass. The skips are the opt-in real Docker suite and Windows symlink privilege. A no-key GET to the OpenAI model-list endpoint times out on a direct connection and returns HTTP 401 through the explicit proxy; **zero inference requests** were made.
+
+No API key/model is configured and no paid-run budget has been granted. Live compatibility and model-effectiveness results remain **not measured**.
+
 The requested review reproduced and repaired four issues: final verification now resumes before model budget checks; patch attempts invalidate earlier test results even if a result receipt fails after source replacement; staging/receipt I/O failures clean temporary files and allow safe retries; Windows fixture self-checks use a real empty pytest config with explicit collection boundaries instead of the NUL device. The initial review run caught one fixture collection failure; the corrected whole-project run passes all 119 executable tests. Fifteen additional regression cases cover these behaviors. All 22 benchmark, 30 Engine and 35 tool tests passed in targeted runs; the tool run also had the same one permission-dependent skip. The rebuilt wheel was reinstalled and exercised outside the checkout, and the current service passed the real browser demo again.

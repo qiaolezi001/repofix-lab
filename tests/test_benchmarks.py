@@ -148,7 +148,8 @@ def test_live_evaluation_requires_local_credentials(tmp_path):
         evaluate(Settings(data_dir=tmp_path), mode="live", allow_paid=True)
 
 
-def test_mock_evaluation_keeps_real_model_metrics_unknown(tmp_path, monkeypatch):
+@pytest.mark.parametrize("task_ids", [None, ["numeric-01"], ["text-01", "numeric-01"]])
+def test_mock_evaluation_keeps_real_model_metrics_unknown(tmp_path, monkeypatch, task_ids):
     import repofix.engine
     import repofix.sandbox
     from repofix.workspace import Workspace
@@ -187,16 +188,107 @@ def test_mock_evaluation_keeps_real_model_metrics_unknown(tmp_path, monkeypatch)
     monkeypatch.setattr(repofix.engine, "Engine", FakeEngine)
     monkeypatch.setattr(repofix.sandbox, "Sandbox", FakeSandbox)
     output = tmp_path / "results"
-    summary = evaluate(Settings(data_dir=tmp_path / "data"), output=output)
-    assert len(summary["records"]) == 12
+    summary = evaluate(Settings(data_dir=tmp_path / "data"), output=output, task_ids=task_ids)
+    expected_ids = task_ids if task_ids is not None else [item["id"] for item in load_tasks("dev")]
+    count = len(expected_ids)
+    assert summary["config"]["task_ids"] == expected_ids
+    assert [record["task_id"] for record in summary["records"]] == [
+        task_id for task_id in expected_ids for _ in range(2)
+    ]
+    assert len(summary["records"]) == count * 2
     assert summary["config"]["budgets"]["maximum_total_model_calls"] == 0
     assert "ENGINEERING ONLY" in summary["config"]["disclaimer"]
     for metrics in summary["metrics"].values():
         assert metrics["repair_successes"] is None
         assert metrics["repair_success_rate"] is None
         assert metrics["regression_passes"] is None
-        assert metrics["configured_tasks"] == 6
+        assert metrics["configured_tasks"] == count
         assert metrics["independently_tested_tasks"] == 0
-    assert len(list((output / "tasks").glob("*.json"))) == 12
+    assert len(list((output / "tasks").glob("*.json"))) == count * 2
     with pytest.raises(ValueError, match="already contains a run"):
         evaluate(Settings(data_dir=tmp_path / "data"), output=output)
+
+
+@pytest.mark.parametrize(
+    "task_ids",
+    [
+        [],
+        ["unknown-01"],
+        ["numeric-03"],
+        ["numeric-01", "numeric-01"],
+        ["numeric-01", None],
+        [""],
+        "numeric-01",
+        ("numeric-01",),
+    ],
+)
+def test_invalid_task_selection_precedes_filesystem_and_provider_side_effects(
+    tmp_path, monkeypatch, task_ids
+):
+    import repofix.engine
+
+    def forbidden_engine(*args, **kwargs):
+        raise AssertionError("Invalid selection must not instantiate Engine or provider")
+
+    monkeypatch.setattr(repofix.engine, "Engine", forbidden_engine)
+    data = tmp_path / "data"
+    output = tmp_path / "results"
+    with pytest.raises(ValueError, match="task_ids|Task IDs"):
+        evaluate(
+            Settings(data_dir=data, api_key="fake-local-test-key", model="fake-local-model"),
+            mode="live",
+            split="dev",
+            output=output,
+            allow_paid=True,
+            task_ids=task_ids,
+        )
+    assert not data.exists() and not output.exists()
+
+
+def test_single_live_task_records_exact_paired_call_budget_without_network(tmp_path, monkeypatch):
+    import repofix.engine
+    import repofix.sandbox
+    from repofix.workspace import Workspace
+
+    created = []
+
+    class FakeEngine:
+        def __init__(self, settings):
+            self.settings = settings
+
+        def create(self, source, issue, **kwargs):
+            created.append(kwargs)
+            task_id = str(len(created))
+            Workspace(source, self.settings.data_dir / "tasks" / task_id)
+            return {"id": task_id}
+
+        def run(self, task_id):
+            return {"status": "completed", "candidate_patch": "", "usage": {}}
+
+    class FakeSandbox:
+        def __init__(self, **kwargs):
+            pass
+
+        def run(self, *args, **kwargs):
+            return {"status": "unavailable", "output": "unit-test stub; no Docker or model call"}
+
+    monkeypatch.setattr(repofix.engine, "Engine", FakeEngine)
+    monkeypatch.setattr(repofix.sandbox, "Sandbox", FakeSandbox)
+    summary = evaluate(
+        Settings(
+            data_dir=tmp_path / "data", api_key="fake-local-test-key", model="fake-local-model"
+        ),
+        mode="live",
+        output=tmp_path / "result",
+        allow_paid=True,
+        max_calls=8,
+        task_ids=["numeric-01"],
+    )
+    assert summary["config"]["budgets"]["maximum_total_model_calls"] == 9
+    assert summary["config"]["task_ids"] == ["numeric-01"]
+    assert [request["strategy"] for request in created] == ["baseline", "agent"]
+    assert [request["limits"]["max_model_calls"] for request in created] == [1, 8]
+    assert all(request["allow_paid"] for request in created)
+    assert len(summary["records"]) == 2
+    assert all(metrics["configured_tasks"] == 1 for metrics in summary["metrics"].values())
+    assert all(metrics["repair_successes"] is None for metrics in summary["metrics"].values())
