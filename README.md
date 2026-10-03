@@ -8,9 +8,11 @@ RepoFix-Lab is a small, inspectable agent engineering project: AST-based code re
 
 > The default `mock` provider is a scripted pagination demonstration. It exercises real indexing, tools, persistence and reporting; it is **not evidence of model repair accuracy**. Real-provider end-to-end validation and repair benchmarks are **not yet measured**. See [validation status](STATUS.md).
 
+Actual Docker verification now passes **10/10 engineering checks** on the maintainer's Windows/Linux engine and a [GitHub Linux runner](https://github.com/qiaolezi001/repofix-lab/actions/runs/37096982053). The checks include a real failing-to-passing patch, verification guards, inspected isolation limits, timeout/cancellation cleanup and a scripted Mock Agent run. Evidence is saved in `reports/docker-validation.json` and `reports/docker-local-validation.json`; these are not LLM benchmark scores. The application image is separately exercised in its documented diagnosis-only mode. See the [bounded live-validation guide (中文)](docs/live-validation.zh-CN.md).
+
 [中文使用指南](docs/guide.zh-CN.md) · [Architecture](docs/architecture.md) · [Evaluation](docs/evaluation.md) · [Learning & interviews](docs/learning.zh-CN.md) · [Release checklist](docs/publishing.md)
 
-![Actual RepoFix-Lab browser run in scripted Mock mode; Docker verification unavailable](docs/assets/demo.png)
+![Actual RepoFix-Lab browser run in scripted Mock mode; Docker public tests passed](docs/assets/demo.png)
 
 *Actual local interface, scripted Mock mode. This screenshot demonstrates workflow, not real-model repair accuracy.*
 
@@ -89,7 +91,7 @@ uv run pytest
 
 Evaluation compares one-shot source-context patch generation against an iterative retrieval/tool strategy. Both use the same model, tasks and declared per-call output cap; call budgets differ and are recorded. Tokens, time and API cost are reported only when available. Reference solutions and hidden tests remain outside task inputs. See [evaluation methodology](docs/evaluation.md) for exact semantics and limitations.
 
-Local checks and artifacts are listed in [STATUS.md](STATUS.md). The first [GitHub Actions run](https://github.com/qiaolezi001/repofix-lab/actions/runs/37058013447) passed on Ubuntu/Python 3.12 with 120 tests; the badge links to current branch checks. Sandbox command construction can be tested offline; only an actual Docker run demonstrates container execution.
+Local checks and artifacts are listed in [STATUS.md](STATUS.md). Follow-up local checks pass 140 tests (2 explicit skips); the [Linux checks](https://github.com/qiaolezi001/repofix-lab/actions/runs/37096982058) pass 141 (1 opt-in Docker skip). The separate Docker workflow actually executes the containers and retains a JSON artifact. The badge links to current branch checks.
 
 ## Architecture
 

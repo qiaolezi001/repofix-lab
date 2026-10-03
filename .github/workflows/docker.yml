@@ -21,11 +21,17 @@ jobs:
         run: docker build --tag repofix-sandbox:0.1 --file Dockerfile.sandbox .
       - name: Execute actual isolated tests and the mock Agent workflow
         run: uv run python scripts/docker_verify.py --output reports/docker-validation.json
+      - name: Build the application image
+        run: docker build --tag repofix-app:validation .
+      - name: Start the application container and exercise its API
+        run: uv run python scripts/app_container_verify.py --output reports/docker-app-validation.json
       - name: Preserve measured container evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: docker-validation
-          path: reports/docker-validation.json
+          path: |
+            reports/docker-validation.json
+            reports/docker-app-validation.json
           if-no-files-found: error
           retention-days: 30

@@ -1,13 +1,13 @@
-# RepoFix-Lab task db77dfc8c3c1435381f10ff674e028f8
+# RepoFix-Lab task c02116f50948454d9feb290f5d7fc8e7
 
-Mode: **mock** · Strategy: **agent** · Status: **completed**
+Mode: **mock** · Strategy: **agent** · Status: **succeeded**
 
 **SCRIPTED MOCK: demonstrates engineering, not model accuracy.**
 
 ## Claims supported by execution
 
 - Candidate patch: produced
-- Public tests: **unavailable**, complete suite: True
+- Public tests: **passed**, complete suite: True
 - Independent acceptance: **not_run**
 - Real model benchmark accuracy: **not measured** in this task report.
 
@@ -46,14 +46,21 @@ Scripted mock workflow finished. Inspect real tool evidence and verification sta
 
 ```json
 {
-  "exit_code": null,
-  "output": "Docker daemon is not reachable",
+  "exit_code": 0,
+  "output": "...                                                                      [100%]\n3 passed in 0.02s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 3, \"passed\": 3, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\n",
   "tests": [
     "tests/test_pagination.py"
   ],
   "complete_suite": true,
-  "status": "unavailable",
-  "duration_seconds": 0.484
+  "status": "passed",
+  "test_summary": {
+    "tests_count": 3,
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0
+  },
+  "duration_seconds": 4.078
 }
 ```
 
@@ -67,9 +74,9 @@ Scripted mock workflow finished. Inspect real tool evidence and verification sta
   "total_tokens": 0,
   "tokens_known": true,
   "cost_usd": null,
-  "elapsed_seconds": 0.75,
+  "elapsed_seconds": 4.594,
   "mock": true,
-  "max_context_chars": 8341
+  "max_context_chars": 8631
 }
 ```
 
@@ -94,7 +101,7 @@ Tool calls: 4 · Applied repair rounds: 1
 [
   {
     "seq": 1,
-    "at": "2026-10-02T19:08:06.367371+00:00",
+    "at": "2026-10-03T04:50:09.571593+00:00",
     "kind": "started",
     "data": {
       "mode": "mock",
@@ -104,7 +111,7 @@ Tool calls: 4 · Applied repair rounds: 1
   },
   {
     "seq": 2,
-    "at": "2026-10-02T19:08:06.383560+00:00",
+    "at": "2026-10-03T04:50:09.599424+00:00",
     "kind": "model_request",
     "data": {
       "number": 1,
@@ -113,7 +120,7 @@ Tool calls: 4 · Applied repair rounds: 1
   },
   {
     "seq": 3,
-    "at": "2026-10-02T19:08:06.389550+00:00",
+    "at": "2026-10-03T04:50:09.609054+00:00",
     "kind": "tool_request",
     "data": {
       "id": "mock-0",
@@ -122,12 +129,12 @@ Tool calls: 4 · Applied repair rounds: 1
         "query": "paginate page page_size",
         "limit": 4
       },
-      "receipt_id": "db77dfc8c3c1435381f10ff674e028f8-1"
+      "receipt_id": "c02116f50948454d9feb290f5d7fc8e7-1"
     }
   },
   {
     "seq": 4,
-    "at": "2026-10-02T19:08:06.423392+00:00",
+    "at": "2026-10-03T04:50:09.674537+00:00",
     "kind": "tool_result",
     "data": {
       "name": "search_code",
@@ -185,7 +192,7 @@ Tool calls: 4 · Applied repair rounds: 1
   },
   {
     "seq": 5,
-    "at": "2026-10-02T19:08:06.437502+00:00",
+    "at": "2026-10-03T04:50:09.699100+00:00",
     "kind": "model_request",
     "data": {
       "number": 2,
@@ -194,7 +201,7 @@ Tool calls: 4 · Applied repair rounds: 1
   },
   {
     "seq": 6,
-    "at": "2026-10-02T19:08:06.443451+00:00",
+    "at": "2026-10-03T04:50:09.710856+00:00",
     "kind": "tool_request",
     "data": {
       "id": "mock-1",
@@ -204,12 +211,12 @@ Tool calls: 4 · Applied repair rounds: 1
         "start_line": 1,
         "end_line": 100
       },
-      "receipt_id": "db77dfc8c3c1435381f10ff674e028f8-2"
+      "receipt_id": "c02116f50948454d9feb290f5d7fc8e7-2"
     }
   },
   {
     "seq": 7,
-    "at": "2026-10-02T19:08:06.463722+00:00",
+    "at": "2026-10-03T04:50:09.748628+00:00",
     "kind": "tool_result",
     "data": {
       "name": "read_file",
@@ -231,7 +238,7 @@ Tool calls: 4 · Applied repair rounds: 1
   },
   {
     "seq": 8,
-    "at": "2026-10-02T19:08:06.477275+00:00",
+    "at": "2026-10-03T04:50:09.771640+00:00",
     "kind": "model_request",
     "data": {
       "number": 3,
@@ -240,7 +247,7 @@ Tool calls: 4 · Applied repair rounds: 1
   },
   {
     "seq": 9,
-    "at": "2026-10-02T19:08:06.484543+00:00",
+    "at": "2026-10-03T04:50:09.781731+00:00",
     "kind": "tool_request",
     "data": {
       "id": "mock-2",
@@ -254,12 +261,12 @@ Tool calls: 4 · Applied repair rounds: 1
           }
         ]
       },
-      "receipt_id": "db77dfc8c3c1435381f10ff674e028f8-3"
+      "receipt_id": "c02116f50948454d9feb290f5d7fc8e7-3"
     }
   },
   {
     "seq": 10,
-    "at": "2026-10-02T19:08:06.494514+00:00",
+    "at": "2026-10-03T04:50:09.804852+00:00",
     "kind": "verification_invalidated",
     "data": {
       "reason": "patch_attempt"
@@ -267,7 +274,7 @@ Tool calls: 4 · Applied repair rounds: 1
   },
   {
     "seq": 11,
-    "at": "2026-10-02T19:08:06.524855+00:00",
+    "at": "2026-10-03T04:50:09.857822+00:00",
     "kind": "tool_result",
     "data": {
       "name": "apply_patch",
@@ -288,7 +295,7 @@ Tool calls: 4 · Applied repair rounds: 1
   },
   {
     "seq": 12,
-    "at": "2026-10-02T19:08:06.540246+00:00",
+    "at": "2026-10-03T04:50:09.888147+00:00",
     "kind": "model_request",
     "data": {
       "number": 4,
@@ -297,32 +304,39 @@ Tool calls: 4 · Applied repair rounds: 1
   },
   {
     "seq": 13,
-    "at": "2026-10-02T19:08:06.545228+00:00",
+    "at": "2026-10-03T04:50:09.900729+00:00",
     "kind": "tool_request",
     "data": {
       "id": "mock-3",
       "name": "run_tests",
       "arguments": {},
-      "receipt_id": "db77dfc8c3c1435381f10ff674e028f8-4"
+      "receipt_id": "c02116f50948454d9feb290f5d7fc8e7-4"
     }
   },
   {
     "seq": 14,
-    "at": "2026-10-02T19:08:07.042572+00:00",
+    "at": "2026-10-03T04:50:14.021280+00:00",
     "kind": "tool_result",
     "data": {
       "name": "run_tests",
       "result": {
         "ok": true,
         "data": {
-          "exit_code": null,
-          "output": "Docker daemon is not reachable",
+          "exit_code": 0,
+          "output": "...                                                                      [100%]\n3 passed in 0.02s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 3, \"passed\": 3, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\n",
           "tests": [
             "tests/test_pagination.py"
           ],
           "complete_suite": true,
-          "status": "unavailable",
-          "duration_seconds": 0.484
+          "status": "passed",
+          "test_summary": {
+            "tests_count": 3,
+            "passed": 3,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0
+          },
+          "duration_seconds": 4.078
         },
         "error": null
       }
@@ -330,19 +344,19 @@ Tool calls: 4 · Applied repair rounds: 1
   },
   {
     "seq": 15,
-    "at": "2026-10-02T19:08:07.056230+00:00",
+    "at": "2026-10-03T04:50:14.039862+00:00",
     "kind": "model_request",
     "data": {
       "number": 5,
-      "context_chars": 8341
+      "context_chars": 8631
     }
   },
   {
     "seq": 16,
-    "at": "2026-10-02T19:08:07.078686+00:00",
+    "at": "2026-10-03T04:50:14.086381+00:00",
     "kind": "finished",
     "data": {
-      "status": "completed",
+      "status": "succeeded",
       "summary": "Scripted mock workflow finished. Inspect real tool evidence and verification status. This is not evidence of model repair accuracy."
     }
   }

@@ -58,12 +58,14 @@ uv run repofix evaluate --mode mock --split eval --output work/mock-eval
 
 # Requires a built Docker sandbox image and explicit paid authorization.
 uv run repofix model-check --allow-paid
+# A selected development pilot: at most 1 + 8 = 9 task calls (probe is separate).
+uv run repofix evaluate --mode live --split dev --task-id numeric-01 --max-calls 8 --output work/live-pilot --allow-paid
 uv run repofix evaluate --mode live --split dev --output work/live-dev --max-calls 12 --allow-paid
 # Freeze implementation/configuration after development, then run once on eval.
 uv run repofix evaluate --mode live --split eval --output work/live-eval --max-calls 12 --allow-paid
 ```
 
-Each `--output` is a fresh directory containing `config.json`, `summary.json`, per-task JSON/patch files and a run README; an existing summary is not overwritten. The Mock provider only scripts the dedicated pagination demo. It is not a solver for benchmark tasks, and may produce inappropriate tool selections under the one-shot baseline. Mock runs check integration and honest failure reporting; do not publish their success ratio as an LLM score.
+Each `--output` is a fresh directory containing `config.json`, `summary.json`, per-task JSON/patch files and a run README; an existing summary is not overwritten. Repeat `--task-id` to select specific tasks in the chosen split; invalid, duplicate or empty selections are rejected before filesystem or provider side effects. The selected IDs and paired call budget are recorded. The Mock provider only scripts the dedicated pagination demo. It is not a solver for benchmark tasks, and may produce inappropriate tool selections under the one-shot baseline. Mock runs check integration and honest failure reporting; do not publish their success ratio as an LLM score.
 
 ## Metrics and unknowns
 
@@ -74,13 +76,15 @@ Save the per-task records and aggregate configuration together. Interpret these 
 - **Calls and Tokens**: attempted model calls and provider-reported prompt/completion/total Tokens. If usage is missing or an error made totals incomplete, mark Tokens unknown rather than displaying zero as measured usage.
 - **Time**: measured task elapsed seconds; record timeout budget and runtime environment.
 - **Cost**: API-returned cost or Token totals × explicitly recorded contemporary prices. Otherwise `null` / unknown; do not fabricate a dollar total.
+
+Per-response provider usage, including returned cached-input/reasoning details, is retained in `usage.responses` for pricing. Missing details remain unknown; the evaluator does not automatically turn partial usage into a billed dollar claim. The [live-validation guide](live-validation.zh-CN.md) records a dated official-price example and separate pilot/final-run budgets.
 - **Failure category**: provider/protocol error, budget exhaustion, tool/policy error, public test failure, hidden test failure, unavailable verification or no candidate.
 
 Ordinary tasks leave `independent_tests` at `not_run`. The evaluator's hidden result exists in evaluation output; it should not be inferred from `succeeded` in task state. An API response claiming “fixed” is not itself a measured repair.
 
 ## Current results
 
-Real-provider end-to-end validation, real-model repair success, Token usage comparison and billed cost are **not yet measured**. API credentials and paid-batch authorization were not provided. Docker execution depends on the current machine and must be verified separately. Local offline validation and any saved dry-run artifacts are documented in [STATUS.md](../STATUS.md); the web screenshot demonstrates the actual interface in Mock mode.
+Real-provider end-to-end validation, real-model repair success, Token usage comparison and billed cost are **not yet measured**. API credentials and paid-batch authorization were not provided. Actual Docker engineering acceptance passes all ten checks both locally and on a GitHub Linux runner; this does not fill any real-model metric. Local validation and saved evidence are documented in [STATUS.md](../STATUS.md); the web screenshot demonstrates the actual interface in Mock mode.
 
 Expected offline cases include: a correct scripted pagination diff with Docker verification `unavailable`, a strict path-policy rejection, a model output lacking a valid action and a loop ending at its configured call limit. These are documented behavioral examples, not invented benchmark successes. Refer to saved reports/test outputs for what actually occurred locally.
 

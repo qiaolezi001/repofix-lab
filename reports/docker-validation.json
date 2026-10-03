@@ -1,0 +1,783 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-10-03T04:34:38.704942+00:00",
+  "status": "passed",
+  "scope": "Real Docker engineering acceptance using self-authored fixtures",
+  "candidate_execution": "Docker only; no host execution",
+  "model_effectiveness": "not_measured",
+  "model_requests": 0,
+  "checks": [
+    {
+      "name": "original_public_tests_fail",
+      "passed": true,
+      "expected_status": "failed",
+      "result": {
+        "exit_code": 1,
+        "output": "FF                                                                       [100%]\n=================================== FAILURES ===================================\n___________________________________ test_sum ___________________________________\n\n    def test_sum():\n>       assert add(2, 3) == 5\nE       assert -1 == 5\nE        +  where -1 = add(2, 3)\n\ntests/test_calc.py:4: AssertionError\n_________________________________ test_signed __________________________________\n\n    def test_signed():\n>       assert add(-1, 1) == 0\nE       assert -2 == 0\nE        +  where -2 = add(-1, 1)\n\ntests/test_calc.py:7: AssertionError\n=========================== short test summary info ============================\nFAILED ../../dev::test_sum - assert -1 == 5\nFAILED ../../dev::test_signed - assert -2 == 0\n2 failed in 0.03s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 2, \"passed\": 0, \"failed\": 2, \"skipped\": 0, \"errors\": 0}\n",
+        "tests": [
+          "tests/test_calc.py"
+        ],
+        "complete_suite": true,
+        "status": "failed",
+        "test_summary": {
+          "tests_count": 2,
+          "passed": 0,
+          "failed": 2,
+          "skipped": 0,
+          "errors": 0
+        },
+        "duration_seconds": 0.598827
+      },
+      "cleanup": {
+        "checked": true,
+        "remaining_container_ids": [],
+        "container_name": "repofix-61f9da04e09543bfb2e1ee3375da3704"
+      }
+    },
+    {
+      "name": "patched_public_tests_pass",
+      "passed": true,
+      "expected_status": "passed",
+      "result": {
+        "exit_code": 0,
+        "output": "..                                                                       [100%]\n2 passed in 0.01s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 2, \"passed\": 2, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\n",
+        "tests": [
+          "tests/test_calc.py"
+        ],
+        "complete_suite": true,
+        "status": "passed",
+        "test_summary": {
+          "tests_count": 2,
+          "passed": 2,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "duration_seconds": 0.54909
+      },
+      "cleanup": {
+        "checked": true,
+        "remaining_container_ids": [],
+        "container_name": "repofix-504a87280b344afebe1178a4f8b64479"
+      }
+    },
+    {
+      "name": "skip_is_rejected",
+      "passed": true,
+      "expected_status": "failed",
+      "result": {
+        "exit_code": 79,
+        "output": "s                                                                        [100%]\n1 skipped in 0.01s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 1, \"passed\": 0, \"failed\": 0, \"skipped\": 1, \"errors\": 0}\nVerification requires a nonempty JUnit report with zero skips and errors\n",
+        "tests": [
+          "tests/test_guard.py"
+        ],
+        "complete_suite": true,
+        "status": "failed",
+        "test_summary": {
+          "tests_count": 1,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 1,
+          "errors": 0
+        },
+        "duration_seconds": 0.537728
+      },
+      "cleanup": {
+        "checked": true,
+        "remaining_container_ids": [],
+        "container_name": "repofix-b7ded13db0844b1991938a96be00d8d8"
+      }
+    },
+    {
+      "name": "empty_test_file_is_rejected",
+      "passed": true,
+      "expected_status": "failed",
+      "result": {
+        "exit_code": 5,
+        "output": "\nno tests ran in 0.00s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 0, \"passed\": 0, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\n",
+        "tests": [
+          "tests/test_guard.py"
+        ],
+        "complete_suite": true,
+        "status": "failed",
+        "test_summary": {
+          "tests_count": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "duration_seconds": 0.543306
+      },
+      "cleanup": {
+        "checked": true,
+        "remaining_container_ids": [],
+        "container_name": "repofix-a51386fe67ba49618a10c9d7856a2d23"
+      }
+    },
+    {
+      "name": "early_zero_exit_is_rejected",
+      "passed": true,
+      "expected_status": "failed",
+      "result": {
+        "exit_code": 79,
+        "output": "Missing or malformed JUnit report; test success cannot be verified\nREPOFIX_TEST_SUMMARY={\"tests_count\": 0, \"passed\": 0, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\nVerification requires a nonempty JUnit report with zero skips and errors\n",
+        "tests": [
+          "tests/test_guard.py"
+        ],
+        "complete_suite": true,
+        "status": "failed",
+        "test_summary": {
+          "tests_count": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "duration_seconds": 0.489741
+      },
+      "cleanup": {
+        "checked": true,
+        "remaining_container_ids": [],
+        "container_name": "repofix-3f7c9c3ef07348aeacf9532c3d16ab91"
+      }
+    },
+    {
+      "name": "test_mutation_is_rejected",
+      "passed": true,
+      "expected_status": "failed",
+      "result": {
+        "exit_code": 79,
+        "output": ".                                                                        [100%]\n1 passed in 0.01s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 1, \"passed\": 1, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\nProtected tests were modified during execution\n",
+        "tests": [
+          "tests/test_guard.py"
+        ],
+        "complete_suite": true,
+        "status": "failed",
+        "test_summary": {
+          "tests_count": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "duration_seconds": 0.539524
+      },
+      "cleanup": {
+        "checked": true,
+        "remaining_container_ids": [],
+        "container_name": "repofix-fc73eb3d3b5a4f5283dac37b9631a54a"
+      }
+    },
+    {
+      "name": "actual_isolation_policy",
+      "passed": true,
+      "expected_status": "passed",
+      "result": {
+        "exit_code": 0,
+        "output": ".                                                                        [100%]\n1 passed in 2.01s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 1, \"passed\": 1, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\n",
+        "tests": [
+          "tests/test_isolation.py"
+        ],
+        "complete_suite": true,
+        "status": "passed",
+        "test_summary": {
+          "tests_count": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0,
+          "errors": 0
+        },
+        "duration_seconds": 2.542892
+      },
+      "cleanup": {
+        "checked": true,
+        "remaining_container_ids": [],
+        "container_name": "repofix-e0f14381daae414a98b7dd2deeea5377"
+      },
+      "container_inspect": {
+        "running": true,
+        "user": "65534:65534",
+        "host_config": {
+          "NetworkMode": "none",
+          "ReadonlyRootfs": true,
+          "Memory": 268435456,
+          "MemorySwap": 268435456,
+          "NanoCpus": 1000000000,
+          "PidsLimit": 64,
+          "CapDrop": [
+            "ALL"
+          ],
+          "CapAdd": null,
+          "SecurityOpt": [
+            "no-new-privileges"
+          ],
+          "Tmpfs": {
+            "/tmp": "rw,nosuid,nodev,size=67108864,mode=1777"
+          },
+          "Privileged": false
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Destination": "/source",
+            "RW": false
+          }
+        ],
+        "environment_keys": [
+          "GPG_KEY",
+          "HOME",
+          "LANG",
+          "PATH",
+          "PYTEST_DISABLE_PLUGIN_AUTOLOAD",
+          "PYTHONDONTWRITEBYTECODE",
+          "PYTHON_SHA256",
+          "PYTHON_VERSION"
+        ]
+      }
+    },
+    {
+      "name": "timeout_removes_actual_container",
+      "passed": true,
+      "expected_status": "timeout",
+      "result": {
+        "exit_code": 137,
+        "output": "",
+        "tests": [
+          "tests/test_sleep.py"
+        ],
+        "complete_suite": true,
+        "status": "timeout",
+        "test_summary": null,
+        "duration_seconds": 5.124964
+      },
+      "cleanup": {
+        "checked": true,
+        "remaining_container_ids": [],
+        "container_name": "repofix-1be7255c8a4e449086c1725a65ea5641"
+      },
+      "container_inspect": {
+        "running": true,
+        "user": "65534:65534",
+        "host_config": {
+          "NetworkMode": "none",
+          "ReadonlyRootfs": true,
+          "Memory": 268435456,
+          "MemorySwap": 268435456,
+          "NanoCpus": 1000000000,
+          "PidsLimit": 64,
+          "CapDrop": [
+            "ALL"
+          ],
+          "CapAdd": null,
+          "SecurityOpt": [
+            "no-new-privileges"
+          ],
+          "Tmpfs": {
+            "/tmp": "rw,nosuid,nodev,size=67108864,mode=1777"
+          },
+          "Privileged": false
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Destination": "/source",
+            "RW": false
+          }
+        ],
+        "environment_keys": [
+          "GPG_KEY",
+          "HOME",
+          "LANG",
+          "PATH",
+          "PYTEST_DISABLE_PLUGIN_AUTOLOAD",
+          "PYTHONDONTWRITEBYTECODE",
+          "PYTHON_SHA256",
+          "PYTHON_VERSION"
+        ]
+      }
+    },
+    {
+      "name": "active_cancellation_removes_actual_container",
+      "passed": true,
+      "expected_status": "cancelled",
+      "result": {
+        "exit_code": 137,
+        "output": "",
+        "tests": [
+          "tests/test_sleep.py"
+        ],
+        "complete_suite": true,
+        "status": "cancelled",
+        "test_summary": null,
+        "duration_seconds": 0.833721
+      },
+      "cleanup": {
+        "checked": true,
+        "remaining_container_ids": [],
+        "container_name": "repofix-efe8e78581dc424288685cb82a18c1d6"
+      },
+      "container_inspect": {
+        "running": true,
+        "user": "65534:65534",
+        "host_config": {
+          "NetworkMode": "none",
+          "ReadonlyRootfs": true,
+          "Memory": 268435456,
+          "MemorySwap": 268435456,
+          "NanoCpus": 1000000000,
+          "PidsLimit": 64,
+          "CapDrop": [
+            "ALL"
+          ],
+          "CapAdd": null,
+          "SecurityOpt": [
+            "no-new-privileges"
+          ],
+          "Tmpfs": {
+            "/tmp": "rw,nosuid,nodev,size=67108864,mode=1777"
+          },
+          "Privileged": false
+        },
+        "mounts": [
+          {
+            "Type": "bind",
+            "Destination": "/source",
+            "RW": false
+          }
+        ],
+        "environment_keys": [
+          "GPG_KEY",
+          "HOME",
+          "LANG",
+          "PATH",
+          "PYTEST_DISABLE_PLUGIN_AUTOLOAD",
+          "PYTHONDONTWRITEBYTECODE",
+          "PYTHON_SHA256",
+          "PYTHON_VERSION"
+        ]
+      }
+    },
+    {
+      "name": "mock_agent_end_to_end",
+      "mode": "mock",
+      "model_effectiveness": "not_measured",
+      "result": {
+        "id": "64628fe4cceb4211aa98afcca3e467dc",
+        "status": "succeeded",
+        "phase": "done",
+        "mode": "mock",
+        "strategy": "agent",
+        "issue": "The paginate function skips the first item of every page. Pages are 1-based; page 1 of [10,20,30,40] with page_size=2 must return [10,20]. Find the off-by-one bug, fix it, and run all public tests.",
+        "workspace_version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+        "warnings": [],
+        "limits": {
+          "max_tool_calls": 12,
+          "max_model_calls": 16,
+          "max_repairs": 3,
+          "timeout_seconds": 180,
+          "context_chars": 32000,
+          "max_output_tokens": 1800
+        },
+        "created_at": "2026-10-03T04:34:50.955982+00:00",
+        "updated_at": "2026-10-03T04:34:51.553888+00:00",
+        "summary": "Scripted mock workflow finished. Inspect real tool evidence and verification status. This is not evidence of model repair accuracy.",
+        "error": null,
+        "events": [
+          {
+            "seq": 1,
+            "at": "2026-10-03T04:34:50.961155+00:00",
+            "kind": "started",
+            "data": {
+              "mode": "mock",
+              "strategy": "agent",
+              "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931"
+            }
+          },
+          {
+            "seq": 2,
+            "at": "2026-10-03T04:34:50.969204+00:00",
+            "kind": "model_request",
+            "data": {
+              "number": 1,
+              "context_chars": 3680
+            }
+          },
+          {
+            "seq": 3,
+            "at": "2026-10-03T04:34:50.970737+00:00",
+            "kind": "tool_request",
+            "data": {
+              "id": "mock-0",
+              "name": "search_code",
+              "arguments": {
+                "query": "paginate page page_size",
+                "limit": 4
+              },
+              "receipt_id": "64628fe4cceb4211aa98afcca3e467dc-1"
+            }
+          },
+          {
+            "seq": 4,
+            "at": "2026-10-03T04:34:50.975686+00:00",
+            "kind": "tool_result",
+            "data": {
+              "name": "search_code",
+              "result": {
+                "ok": true,
+                "data": {
+                  "results": [
+                    {
+                      "path": "pagination.py",
+                      "symbol": "paginate",
+                      "start_line": 1,
+                      "end_line": 6,
+                      "text": "def paginate(items, page, page_size):\n    \"\"\"Return a one-based page; invalid page arguments raise ValueError.\"\"\"\n    if page < 1 or page_size < 1:\n        raise ValueError(\"page and page_size must be positive\")\n    start = (page - 1) * page_size + 1\n    return items[start:start + page_size]",
+                      "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+                      "content_sha256": "c5eb196d46c841a09f2ac32d9e87b2bf2a59c681d15efd954b725508cc95f3be",
+                      "score": 4.154442
+                    },
+                    {
+                      "path": "tests/test_pagination.py",
+                      "symbol": "test_invalid_page",
+                      "start_line": 14,
+                      "end_line": 16,
+                      "text": "def test_invalid_page():\n    with pytest.raises(ValueError):\n        paginate([1], 0, 2)",
+                      "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+                      "content_sha256": "95367c4b159470720a8667dc707d6ea5a217b9127a9de563f9e383fefed30802",
+                      "score": 1.304172
+                    },
+                    {
+                      "path": "tests/test_pagination.py",
+                      "symbol": "test_first_page",
+                      "start_line": 5,
+                      "end_line": 6,
+                      "text": "def test_first_page():\n    assert paginate([0, 1, 2, 3, 4], 1, 2) == [0, 1]",
+                      "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+                      "content_sha256": "95367c4b159470720a8667dc707d6ea5a217b9127a9de563f9e383fefed30802",
+                      "score": 1.265123
+                    },
+                    {
+                      "path": "tests/test_pagination.py",
+                      "symbol": "<module>",
+                      "start_line": 2,
+                      "end_line": 2,
+                      "text": "from pagination import paginate",
+                      "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+                      "content_sha256": "95367c4b159470720a8667dc707d6ea5a217b9127a9de563f9e383fefed30802",
+                      "score": 0.33498
+                    }
+                  ],
+                  "warnings": [],
+                  "truncated": false
+                },
+                "error": null
+              }
+            }
+          },
+          {
+            "seq": 5,
+            "at": "2026-10-03T04:34:50.979216+00:00",
+            "kind": "model_request",
+            "data": {
+              "number": 2,
+              "context_chars": 5887
+            }
+          },
+          {
+            "seq": 6,
+            "at": "2026-10-03T04:34:50.980882+00:00",
+            "kind": "tool_request",
+            "data": {
+              "id": "mock-1",
+              "name": "read_file",
+              "arguments": {
+                "path": "pagination.py",
+                "start_line": 1,
+                "end_line": 100
+              },
+              "receipt_id": "64628fe4cceb4211aa98afcca3e467dc-2"
+            }
+          },
+          {
+            "seq": 7,
+            "at": "2026-10-03T04:34:50.984456+00:00",
+            "kind": "tool_result",
+            "data": {
+              "name": "read_file",
+              "result": {
+                "ok": true,
+                "data": {
+                  "path": "pagination.py",
+                  "symbol": "<read>",
+                  "start_line": 1,
+                  "end_line": 6,
+                  "text": "def paginate(items, page, page_size):\n    \"\"\"Return a one-based page; invalid page arguments raise ValueError.\"\"\"\n    if page < 1 or page_size < 1:\n        raise ValueError(\"page and page_size must be positive\")\n    start = (page - 1) * page_size + 1\n    return items[start:start + page_size]",
+                  "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+                  "content_sha256": "c5eb196d46c841a09f2ac32d9e87b2bf2a59c681d15efd954b725508cc95f3be",
+                  "truncated": false
+                },
+                "error": null
+              }
+            }
+          },
+          {
+            "seq": 8,
+            "at": "2026-10-03T04:34:50.987953+00:00",
+            "kind": "model_request",
+            "data": {
+              "number": 3,
+              "context_chars": 6881
+            }
+          },
+          {
+            "seq": 9,
+            "at": "2026-10-03T04:34:50.989618+00:00",
+            "kind": "tool_request",
+            "data": {
+              "id": "mock-2",
+              "name": "apply_patch",
+              "arguments": {
+                "edits": [
+                  {
+                    "path": "pagination.py",
+                    "old": "start = (page - 1) * page_size + 1",
+                    "new": "start = (page - 1) * page_size"
+                  }
+                ]
+              },
+              "receipt_id": "64628fe4cceb4211aa98afcca3e467dc-3"
+            }
+          },
+          {
+            "seq": 10,
+            "at": "2026-10-03T04:34:50.992071+00:00",
+            "kind": "verification_invalidated",
+            "data": {
+              "reason": "patch_attempt"
+            }
+          },
+          {
+            "seq": 11,
+            "at": "2026-10-03T04:34:50.996918+00:00",
+            "kind": "tool_result",
+            "data": {
+              "name": "apply_patch",
+              "result": {
+                "ok": true,
+                "data": {
+                  "changed_files": [
+                    "pagination.py"
+                  ],
+                  "patch_count": 1,
+                  "recovered": false,
+                  "diff": "--- a/pagination.py\n+++ b/pagination.py\n@@ -2,5 +2,5 @@\n     \"\"\"Return a one-based page; invalid page arguments raise ValueError.\"\"\"\n     if page < 1 or page_size < 1:\n         raise ValueError(\"page and page_size must be positive\")\n-    start = (page - 1) * page_size + 1\n+    start = (page - 1) * page_size\n     return items[start:start + page_size]\n",
+                  "truncated": false
+                },
+                "error": null
+              }
+            }
+          },
+          {
+            "seq": 12,
+            "at": "2026-10-03T04:34:51.000522+00:00",
+            "kind": "model_request",
+            "data": {
+              "number": 4,
+              "context_chars": 7842
+            }
+          },
+          {
+            "seq": 13,
+            "at": "2026-10-03T04:34:51.002324+00:00",
+            "kind": "tool_request",
+            "data": {
+              "id": "mock-3",
+              "name": "run_tests",
+              "arguments": {},
+              "receipt_id": "64628fe4cceb4211aa98afcca3e467dc-4"
+            }
+          },
+          {
+            "seq": 14,
+            "at": "2026-10-03T04:34:51.542979+00:00",
+            "kind": "tool_result",
+            "data": {
+              "name": "run_tests",
+              "result": {
+                "ok": true,
+                "data": {
+                  "exit_code": 0,
+                  "output": "...                                                                      [100%]\n3 passed in 0.01s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 3, \"passed\": 3, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\n",
+                  "tests": [
+                    "tests/test_pagination.py"
+                  ],
+                  "complete_suite": true,
+                  "status": "passed",
+                  "test_summary": {
+                    "tests_count": 3,
+                    "passed": 3,
+                    "failed": 0,
+                    "skipped": 0,
+                    "errors": 0
+                  },
+                  "duration_seconds": 0.53679
+                },
+                "error": null
+              }
+            }
+          },
+          {
+            "seq": 15,
+            "at": "2026-10-03T04:34:51.547177+00:00",
+            "kind": "model_request",
+            "data": {
+              "number": 5,
+              "context_chars": 8633
+            }
+          },
+          {
+            "seq": 16,
+            "at": "2026-10-03T04:34:51.551864+00:00",
+            "kind": "finished",
+            "data": {
+              "status": "succeeded",
+              "summary": "Scripted mock workflow finished. Inspect real tool evidence and verification status. This is not evidence of model repair accuracy."
+            }
+          }
+        ],
+        "verification_pending": null,
+        "model_errors": 0,
+        "tool_calls": 4,
+        "repairs": 1,
+        "evidence": [
+          {
+            "path": "pagination.py",
+            "symbol": "paginate",
+            "start_line": 1,
+            "end_line": 6,
+            "text": "def paginate(items, page, page_size):\n    \"\"\"Return a one-based page; invalid page arguments raise ValueError.\"\"\"\n    if page < 1 or page_size < 1:\n        raise ValueError(\"page and page_size must be positive\")\n    start = (page - 1) * page_size + 1\n    return items[start:start + page_size]",
+            "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+            "content_sha256": "c5eb196d46c841a09f2ac32d9e87b2bf2a59c681d15efd954b725508cc95f3be",
+            "score": 4.154442
+          },
+          {
+            "path": "tests/test_pagination.py",
+            "symbol": "test_invalid_page",
+            "start_line": 14,
+            "end_line": 16,
+            "text": "def test_invalid_page():\n    with pytest.raises(ValueError):\n        paginate([1], 0, 2)",
+            "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+            "content_sha256": "95367c4b159470720a8667dc707d6ea5a217b9127a9de563f9e383fefed30802",
+            "score": 1.304172
+          },
+          {
+            "path": "tests/test_pagination.py",
+            "symbol": "test_first_page",
+            "start_line": 5,
+            "end_line": 6,
+            "text": "def test_first_page():\n    assert paginate([0, 1, 2, 3, 4], 1, 2) == [0, 1]",
+            "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+            "content_sha256": "95367c4b159470720a8667dc707d6ea5a217b9127a9de563f9e383fefed30802",
+            "score": 1.265123
+          },
+          {
+            "path": "tests/test_pagination.py",
+            "symbol": "<module>",
+            "start_line": 2,
+            "end_line": 2,
+            "text": "from pagination import paginate",
+            "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+            "content_sha256": "95367c4b159470720a8667dc707d6ea5a217b9127a9de563f9e383fefed30802",
+            "score": 0.33498
+          },
+          {
+            "path": "pagination.py",
+            "symbol": "<read>",
+            "start_line": 1,
+            "end_line": 6,
+            "text": "def paginate(items, page, page_size):\n    \"\"\"Return a one-based page; invalid page arguments raise ValueError.\"\"\"\n    if page < 1 or page_size < 1:\n        raise ValueError(\"page and page_size must be positive\")\n    start = (page - 1) * page_size + 1\n    return items[start:start + page_size]",
+            "version": "72b01f4fec7ebf9d47327cd8b07e1988e2cc059bbff73b2852f2d0ffca5bd931",
+            "content_sha256": "c5eb196d46c841a09f2ac32d9e87b2bf2a59c681d15efd954b725508cc95f3be",
+            "truncated": false
+          }
+        ],
+        "candidate_patch": "--- a/pagination.py\n+++ b/pagination.py\n@@ -2,5 +2,5 @@\n     \"\"\"Return a one-based page; invalid page arguments raise ValueError.\"\"\"\n     if page < 1 or page_size < 1:\n         raise ValueError(\"page and page_size must be positive\")\n-    start = (page - 1) * page_size + 1\n+    start = (page - 1) * page_size\n     return items[start:start + page_size]\n",
+        "public_tests": {
+          "exit_code": 0,
+          "output": "...                                                                      [100%]\n3 passed in 0.01s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 3, \"passed\": 3, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\n",
+          "tests": [
+            "tests/test_pagination.py"
+          ],
+          "complete_suite": true,
+          "status": "passed",
+          "test_summary": {
+            "tests_count": 3,
+            "passed": 3,
+            "failed": 0,
+            "skipped": 0,
+            "errors": 0
+          },
+          "duration_seconds": 0.53679
+        },
+        "independent_tests": {
+          "status": "not_run"
+        },
+        "usage": {
+          "model_calls": 5,
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0,
+          "tokens_known": true,
+          "cost_usd": null,
+          "elapsed_seconds": 0.5936,
+          "mock": true,
+          "max_context_chars": 8633
+        },
+        "cancel_requested": false
+      },
+      "passed": true
+    }
+  ],
+  "availability": {
+    "status": "available",
+    "details": "Linux Docker daemon and local sandbox image available"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "git_commit": "2d4ddf264ed8750887c893fb4714d2ba2ac9af9d",
+    "git_dirty": false,
+    "docker": {
+      "client": {
+        "Version": "28.0.4",
+        "ApiVersion": "1.48",
+        "GitCommit": "b8034c0",
+        "Os": "linux",
+        "Arch": "amd64"
+      },
+      "server": {
+        "Version": "28.0.4",
+        "ApiVersion": "1.48",
+        "GitCommit": "6430e49",
+        "Os": "linux",
+        "Arch": "amd64"
+      }
+    },
+    "image": {
+      "Id": "sha256:efce53f5897dd378cc5f27bc879e88dd322d0743ffbcb4820e25fe28040fca3c",
+      "RepoDigests": [],
+      "Created": "2026-10-03T04:34:37.684385506Z",
+      "Architecture": "amd64",
+      "Os": "linux",
+      "requested_tag": "repofix-sandbox:0.1"
+    }
+  },
+  "patch": {
+    "ok": true,
+    "baseline_version": "7e24a93242f963142595c54c0a707c4b9f71c35c8c8eb3613fcb9d367608cb15",
+    "source_unchanged": true
+  },
+  "duration_seconds": 12.856,
+  "finished_at": "2026-10-03T04:34:51.561093+00:00"
+}

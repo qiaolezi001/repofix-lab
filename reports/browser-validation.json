@@ -9,8 +9,8 @@
     390,
     844
   ],
-  "task_status": "completed",
-  "public_tests": "unavailable",
+  "task_status": "succeeded",
+  "public_tests": "passed",
   "checks": [
     "demo submission",
     "source evidence",

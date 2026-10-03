@@ -1,6 +1,6 @@
 {
-  "id": "db77dfc8c3c1435381f10ff674e028f8",
-  "status": "completed",
+  "id": "c02116f50948454d9feb290f5d7fc8e7",
+  "status": "succeeded",
   "phase": "done",
   "mode": "mock",
   "strategy": "agent",
@@ -15,14 +15,14 @@
     "context_chars": 32000,
     "max_output_tokens": 1800
   },
-  "created_at": "2026-10-02T19:08:06.299566+00:00",
-  "updated_at": "2026-10-02T19:08:07.084674+00:00",
+  "created_at": "2026-10-03T04:50:09.446930+00:00",
+  "updated_at": "2026-10-03T04:50:14.094336+00:00",
   "summary": "Scripted mock workflow finished. Inspect real tool evidence and verification status. This is not evidence of model repair accuracy.",
   "error": null,
   "events": [
     {
       "seq": 1,
-      "at": "2026-10-02T19:08:06.367371+00:00",
+      "at": "2026-10-03T04:50:09.571593+00:00",
       "kind": "started",
       "data": {
         "mode": "mock",
@@ -32,7 +32,7 @@
     },
     {
       "seq": 2,
-      "at": "2026-10-02T19:08:06.383560+00:00",
+      "at": "2026-10-03T04:50:09.599424+00:00",
       "kind": "model_request",
       "data": {
         "number": 1,
@@ -41,7 +41,7 @@
     },
     {
       "seq": 3,
-      "at": "2026-10-02T19:08:06.389550+00:00",
+      "at": "2026-10-03T04:50:09.609054+00:00",
       "kind": "tool_request",
       "data": {
         "id": "mock-0",
@@ -50,12 +50,12 @@
           "query": "paginate page page_size",
           "limit": 4
         },
-        "receipt_id": "db77dfc8c3c1435381f10ff674e028f8-1"
+        "receipt_id": "c02116f50948454d9feb290f5d7fc8e7-1"
       }
     },
     {
       "seq": 4,
-      "at": "2026-10-02T19:08:06.423392+00:00",
+      "at": "2026-10-03T04:50:09.674537+00:00",
       "kind": "tool_result",
       "data": {
         "name": "search_code",
@@ -113,7 +113,7 @@
     },
     {
       "seq": 5,
-      "at": "2026-10-02T19:08:06.437502+00:00",
+      "at": "2026-10-03T04:50:09.699100+00:00",
       "kind": "model_request",
       "data": {
         "number": 2,
@@ -122,7 +122,7 @@
     },
     {
       "seq": 6,
-      "at": "2026-10-02T19:08:06.443451+00:00",
+      "at": "2026-10-03T04:50:09.710856+00:00",
       "kind": "tool_request",
       "data": {
         "id": "mock-1",
@@ -132,12 +132,12 @@
           "start_line": 1,
           "end_line": 100
         },
-        "receipt_id": "db77dfc8c3c1435381f10ff674e028f8-2"
+        "receipt_id": "c02116f50948454d9feb290f5d7fc8e7-2"
       }
     },
     {
       "seq": 7,
-      "at": "2026-10-02T19:08:06.463722+00:00",
+      "at": "2026-10-03T04:50:09.748628+00:00",
       "kind": "tool_result",
       "data": {
         "name": "read_file",
@@ -159,7 +159,7 @@
     },
     {
       "seq": 8,
-      "at": "2026-10-02T19:08:06.477275+00:00",
+      "at": "2026-10-03T04:50:09.771640+00:00",
       "kind": "model_request",
       "data": {
         "number": 3,
@@ -168,7 +168,7 @@
     },
     {
       "seq": 9,
-      "at": "2026-10-02T19:08:06.484543+00:00",
+      "at": "2026-10-03T04:50:09.781731+00:00",
       "kind": "tool_request",
       "data": {
         "id": "mock-2",
@@ -182,12 +182,12 @@
             }
           ]
         },
-        "receipt_id": "db77dfc8c3c1435381f10ff674e028f8-3"
+        "receipt_id": "c02116f50948454d9feb290f5d7fc8e7-3"
       }
     },
     {
       "seq": 10,
-      "at": "2026-10-02T19:08:06.494514+00:00",
+      "at": "2026-10-03T04:50:09.804852+00:00",
       "kind": "verification_invalidated",
       "data": {
         "reason": "patch_attempt"
@@ -195,7 +195,7 @@
     },
     {
       "seq": 11,
-      "at": "2026-10-02T19:08:06.524855+00:00",
+      "at": "2026-10-03T04:50:09.857822+00:00",
       "kind": "tool_result",
       "data": {
         "name": "apply_patch",
@@ -216,7 +216,7 @@
     },
     {
       "seq": 12,
-      "at": "2026-10-02T19:08:06.540246+00:00",
+      "at": "2026-10-03T04:50:09.888147+00:00",
       "kind": "model_request",
       "data": {
         "number": 4,
@@ -225,32 +225,39 @@
     },
     {
       "seq": 13,
-      "at": "2026-10-02T19:08:06.545228+00:00",
+      "at": "2026-10-03T04:50:09.900729+00:00",
       "kind": "tool_request",
       "data": {
         "id": "mock-3",
         "name": "run_tests",
         "arguments": {},
-        "receipt_id": "db77dfc8c3c1435381f10ff674e028f8-4"
+        "receipt_id": "c02116f50948454d9feb290f5d7fc8e7-4"
       }
     },
     {
       "seq": 14,
-      "at": "2026-10-02T19:08:07.042572+00:00",
+      "at": "2026-10-03T04:50:14.021280+00:00",
       "kind": "tool_result",
       "data": {
         "name": "run_tests",
         "result": {
           "ok": true,
           "data": {
-            "exit_code": null,
-            "output": "Docker daemon is not reachable",
+            "exit_code": 0,
+            "output": "...                                                                      [100%]\n3 passed in 0.02s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 3, \"passed\": 3, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\n",
             "tests": [
               "tests/test_pagination.py"
             ],
             "complete_suite": true,
-            "status": "unavailable",
-            "duration_seconds": 0.484
+            "status": "passed",
+            "test_summary": {
+              "tests_count": 3,
+              "passed": 3,
+              "failed": 0,
+              "skipped": 0,
+              "errors": 0
+            },
+            "duration_seconds": 4.078
           },
           "error": null
         }
@@ -258,19 +265,19 @@
     },
     {
       "seq": 15,
-      "at": "2026-10-02T19:08:07.056230+00:00",
+      "at": "2026-10-03T04:50:14.039862+00:00",
       "kind": "model_request",
       "data": {
         "number": 5,
-        "context_chars": 8341
+        "context_chars": 8631
       }
     },
     {
       "seq": 16,
-      "at": "2026-10-02T19:08:07.078686+00:00",
+      "at": "2026-10-03T04:50:14.086381+00:00",
       "kind": "finished",
       "data": {
-        "status": "completed",
+        "status": "succeeded",
         "summary": "Scripted mock workflow finished. Inspect real tool evidence and verification status. This is not evidence of model repair accuracy."
       }
     }
@@ -333,14 +340,21 @@
   ],
   "candidate_patch": "--- a/pagination.py\n+++ b/pagination.py\n@@ -2,5 +2,5 @@\n     \"\"\"Return a one-based page; invalid page arguments raise ValueError.\"\"\"\n     if page < 1 or page_size < 1:\n         raise ValueError(\"page and page_size must be positive\")\n-    start = (page - 1) * page_size + 1\n+    start = (page - 1) * page_size\n     return items[start:start + page_size]\n",
   "public_tests": {
-    "exit_code": null,
-    "output": "Docker daemon is not reachable",
+    "exit_code": 0,
+    "output": "...                                                                      [100%]\n3 passed in 0.02s\nREPOFIX_TEST_SUMMARY={\"tests_count\": 3, \"passed\": 3, \"failed\": 0, \"skipped\": 0, \"errors\": 0}\n",
     "tests": [
       "tests/test_pagination.py"
     ],
     "complete_suite": true,
-    "status": "unavailable",
-    "duration_seconds": 0.484
+    "status": "passed",
+    "test_summary": {
+      "tests_count": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0
+    },
+    "duration_seconds": 4.078
   },
   "independent_tests": {
     "status": "not_run"
@@ -352,9 +366,9 @@
     "total_tokens": 0,
     "tokens_known": true,
     "cost_usd": null,
-    "elapsed_seconds": 0.75,
+    "elapsed_seconds": 4.594,
     "mock": true,
-    "max_context_chars": 8341
+    "max_context_chars": 8631
   },
   "cancel_requested": false
 }
